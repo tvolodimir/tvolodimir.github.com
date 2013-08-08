@@ -1,0 +1,15 @@
+﻿<Deployment xmlns="http://schemas.microsoft.com/client/2007/deployment" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" EntryPointAssembly="GraphLayer" EntryPointType="GraphLayer.App" RuntimeVersion="5.0.61118.0">
+  <Deployment.OutOfBrowserSettings>
+    <OutOfBrowserSettings ShortName="GraphLayer Application" EnableGPUAcceleration="True" ShowInstallMenuItem="True">
+      <OutOfBrowserSettings.Blurb>GraphLayer Application on your desktop; at home, at work or on the go.</OutOfBrowserSettings.Blurb>
+      <OutOfBrowserSettings.WindowSettings>
+        <WindowSettings Title="GraphLayer Application" Height="600" Width="800" />
+      </OutOfBrowserSettings.WindowSettings>
+      <OutOfBrowserSettings.Icons />
+    </OutOfBrowserSettings>
+  </Deployment.OutOfBrowserSettings>
+  <Deployment.Parts>
+    <AssemblyPart x:Name="GraphLayer" Source="GraphLayer.dll" />
+    <AssemblyPart x:Name="GraphCore" Source="GraphCore.dll" />
+  </Deployment.Parts>
+</Deployment>

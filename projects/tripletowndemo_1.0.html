@@ -1,0 +1,83 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <title>Triple Town Clone - tvolodimir's project</title>
+  
+  <meta name="description" content="Simple clone of game 'Triple Town' in pure JavaScript">
+  <meta name="author" content="Terebus Volodymyr - tvolodimir">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" type='text/css' href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700italic,700">
+  <link rel="stylesheet" media="screen" href="/styles.css">
+  <link rel="stylesheet" media="print" href="/styles_print.css">
+  
+  <script type="text/javascript" src="tripletowndemo_storage_1.0.js"></script>
+  <script type="text/javascript" src="core_1.0.js"></script>
+  <script type="text/javascript" src="tripletowndemo_1.0.js"></script>
+  <script type="text/javascript">
+    function document_load() {
+    	app = new TripleTown();
+        app.start();
+	}
+  </script>
+  <style>
+  body{
+    padding-bottom:0;
+    padding-top: 0;
+  }
+  .ava{
+	margin: 20px 20px 4px 4px;
+	-webkit-box-shadow: 1px 1px 6px rgba(70, 70, 70, 1);
+	-moz-box-shadow:    1px 1px 6px rgba(70, 70, 70, 1);
+	box-shadow:         1px 1px 6px rgba(70, 70, 70, 1);
+  }
+  canvas{
+	outline: none;
+	position: absolute;
+	-webkit-user-select: none;
+	position: absolute;
+  }
+  .demo{
+	padding: 10px 0px 10px 0px;
+  }
+  a:link, a:visited, a:hover, a:active {color: #000;}
+  </style>
+</head>
+
+<body onload="document_load()">   
+    <!-- vcard !-->
+    <header class="vcard">
+        <img class="ava" src="/projects/img/TripleTown_pic_150.png"/>
+        <h1 class="fn">Triple Town Clone</h1>
+        <h2 class="role"><a href="/main.html">Projects</a> > Simple clone of game "Triple Town" in pure JavaScript</h2>
+    </header>
+    
+    <!-- summary !-->
+    <section id="summary">
+        <h1>Summary</h1>
+        <p>Clientside application using JavaScript and canvas element of HTML5.</p>
+    </section>
+     
+    <section class="demo" style="-webkit-user-select: none;">
+        <div id="canvasesdiv" style="width: 560px;height: 560px;">
+            <canvas id="layer1" style="z-index: 3;" height="560px" width="560"></canvas>
+            <canvas id="layer0" style="z-index: 4;" height="560px" width="560"></canvas>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-34638673-1']);
+        _gaq.push(['_trackPageview']);
+        
+        (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <title>Silverlight Fake3D - tvolodimir's project</title>
+  
+  <meta name="description" content="Silverlight Fake3D">
+  <meta name="author" content="Terebus Volodymyr - tvolodimir">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" type='text/css' href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700italic,700">
+  <link rel="stylesheet" media="screen" href="/styles.css">
+  <link rel="stylesheet" media="print" href="/styles_print.css">
+  
+    <script type="text/javascript">
+        function onSilverlightError(sender, args) {
+            var appSource = "";
+            if (sender != null && sender != 0) {
+              appSource = sender.getHost().Source;
+            }
+            
+            var errorType = args.ErrorType;
+            var iErrorCode = args.ErrorCode;
+
+            if (errorType == "ImageError" || errorType == "MediaError") {
+              return;
+            }
+
+            var errMsg = "Unhandled Error in Silverlight Application " +  appSource + "\n" ;
+
+            errMsg += "Code: "+ iErrorCode + "    \n";
+            errMsg += "Category: " + errorType + "       \n";
+            errMsg += "Message: " + args.ErrorMessage + "     \n";
+
+            if (errorType == "ParserError") {
+                errMsg += "File: " + args.xamlFile + "     \n";
+                errMsg += "Line: " + args.lineNumber + "     \n";
+                errMsg += "Position: " + args.charPosition + "     \n";
+            }
+            else if (errorType == "RuntimeError") {           
+                if (args.lineNumber != 0) {
+                    errMsg += "Line: " + args.lineNumber + "     \n";
+                    errMsg += "Position: " +  args.charPosition + "     \n";
+                }
+                errMsg += "MethodName: " + args.methodName + "     \n";
+            }
+
+            throw new Error(errMsg);
+        }
+    </script>
+  <style>
+  body{
+    padding-bottom:0;
+    padding-top: 0;
+  }
+  .ava{
+    margin: 20px 20px 4px 4px;
+	-webkit-box-shadow: 1px 1px 6px rgba(70, 70, 70, 1);
+	-moz-box-shadow:    1px 1px 6px rgba(70, 70, 70, 1);
+	box-shadow:         1px 1px 6px rgba(70, 70, 70, 1);
+  }
+  canvas{
+	outline: none;
+	position: absolute;
+	-webkit-user-select: none;
+	position: absolute;
+  }
+  .demo{
+	padding: 10px 0px 10px 0px;
+  }
+  a:link, a:visited, a:hover, a:active {color: #000;}
+  </style>
+  <style type="text/css">
+    #silverlightControlHost {
+	    height: 100%;
+	    text-align:center;
+    }
+    </style>
+</head>
+<body>
+	<!-- vcard !-->
+    <header class="vcard">
+        <img class="ava" src="/projects/img/SL.Fake3D_pic_150.png"/>
+        <h1 class="fn">Silverlight Fake3D</h1>
+        <h2 class="role"><a href="/main.html">Projects</a> > Silverlight Fake3D</h2>
+    </header>
+    
+    <!-- summary !-->
+    <section id="summary">
+        <h1>Summary</h1>
+        <pSilverlight Fake3D</p>
+        <p><a href="SL.Fake3D.zip" title="Silverlight Fake3D sources">sources</a></p>
+    </section>
+     
+	<section class="demo" style="-webkit-user-select: none;">
+		<form id="form1" runat="server" style="height:500px;width:600px;border:1px solid #111">
+		<div id="silverlightControlHost">
+			<object data="data:application/x-silverlight-2," type="application/x-silverlight-2" width="100%" height="100%">
+			  <param name="source" value="SL.Fake3D.xap"/>
+			  <param name="onError" value="onSilverlightError" />
+			  <param name="background" value="white" />
+			  <param name="minRuntimeVersion" value="5.0.61118.0" />
+			  <param name="autoUpgrade" value="true" />
+			  <a href="http://go.microsoft.com/fwlink/?LinkID=149156&v=5.0.61118.0" style="text-decoration:none">
+				  <img src="http://go.microsoft.com/fwlink/?LinkId=161376" alt="Get Microsoft Silverlight" style="border-style:none"/>
+			  </a>
+			</object><iframe id="_sl_historyFrame" style="visibility:hidden;height:0px;width:0px;border:0px"></iframe></div>
+		</form>
+	</section>
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-34638673-1']);
+        _gaq.push(['_trackPageview']);
+        
+        (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+</body>
+</html>
