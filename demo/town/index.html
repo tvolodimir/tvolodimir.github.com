@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>TripleTown Clone</title>
+    <meta name="description" content="Prototype of well known game TripleTown in pure JavaScript">
+    <meta name="author" content="Terebus Volodymyr - tvolodimir">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript">
+        window.scope = window;
+    </script>
+    <script type="text/javascript" src="js-modules/simpleModuleManager.js"></script>
+    <script type="text/javascript" src="js-modules/defineModule.js"></script>
+    <script type="text/javascript" src="js-modules/DataTimeBuffer.js"></script>
+    <script type="text/javascript" src="js-modules/InputExtension.js"></script>
+    <script type="text/javascript" src="js-modules/MultiLayeredCanvas.js"></script>
+    <script type="text/javascript" src="js-modules/Loader.js"></script>
+    <script type="text/javascript" src="storage.js"></script>
+    <script type="text/javascript" src="tripletown.js"></script>
+    <script type="text/javascript">
+        var app;
+        function document_load() {
+            var $r = window.$simpleModuleManager.getModule;
+            var TripleTown = $r('tripleTownApp').TripleTown;
+            app = new TripleTown();
+        }
+    </script>
+    <style type="text/css">
+        #canvasesdiv {
+            width: 560px;
+            height: 560px;
+        }
+    </style>
+</head>
+<body onload="document_load()" class="mbg2">
+<h1 class="logo">TripleTown Clone</h1>
+
+<div id="canvasesdiv">
+    <canvas id="layer1" style="z-index: 3;" height="560px" width="560"></canvas>
+    <canvas id="layer0" style="z-index: 4;" height="560px" width="560"></canvas>
+</div>
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    try {
+        var pageTracker = _gat._getTracker("UA-35346388-1");
+        pageTracker._trackPageview();
+    } catch (err) {
+    }
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Solver Forces</title>
+    <meta name="description" content="Solver Forces in pure JavaScript in flat dimension">
+    <meta name="author" content="Terebus Volodymyr - tvolodimir">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="solverforces.js"></script>
+    <script type="text/javascript">
+        var app;
+        function document_load() {
+            app = new SolverForcesApp(document.getElementById('canvas'));
+        }
+    </script>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        body {
+            background-color: rgb(220, 220, 220);
+            font: 11px/1.33 Verdana, sans-serif;
+            font-family: verdana, tahoma, arial, sans-serif;
+        }
+
+        #canvas {
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        #canvas {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+        }
+
+        .demo {
+            border: 1px solid #bebebe;
+            position: relative;
+            margin: 10px auto;
+            width: 700px;
+            height: 500px;
+            box-shadow: 0 1px 6px 2px rgba(0, 0, 0, 0.3), 0 0 50px 5px rgba(255, 255, 255, 0.5) inset
+        }
+
+        h1.logo {
+            margin: 0;
+            text-align: center;
+            font-size: 3em;
+            padding-top: 10px;
+            color: #461E1E;
+            text-shadow: 1px 1px 1px rgba(255, 255, 255, .5), -1px -1px 1px rgba(0, 0, 0, .5);
+            color: rgba(37, 37, 37, 0.2);
+        }
+		
+		.mbg2 {
+			background: -webkit-radial-gradient(center, circle farthest-corner, rgba(255, 255, 255, 0) 50%, rgba(200, 200, 200, 1)), -webkit-radial-gradient(center, circle, rgba(255, 255, 255, .35), rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 21%), -webkit-radial-gradient(center, circle, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 21%), -webkit-radial-gradient(center, circle farthest-corner, #f0f0f0, #c0c0c0);
+			background: -moz-radial-gradient(center, circle farthest-corner, rgba(255, 255, 255, 0) 50%, rgba(200, 200, 200, 1)), -webkit-radial-gradient(center, circle, rgba(255, 255, 255, .35), rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 21%), -webkit-radial-gradient(center, circle, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 21%), -webkit-radial-gradient(center, circle farthest-corner, #f0f0f0, #c0c0c0);
+			background: -ms-radial-gradient(center, circle farthest-corner, rgba(255, 255, 255, 0) 50%, rgba(200, 200, 200, 1)), -webkit-radial-gradient(center, circle, rgba(255, 255, 255, .35), rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 21%), -webkit-radial-gradient(center, circle, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 21%), -webkit-radial-gradient(center, circle farthest-corner, #f0f0f0, #c0c0c0);
+			background: -o-radial-gradient(center, circle farthest-corner, rgba(255, 255, 255, 0) 50%, rgba(200, 200, 200, 1)), -webkit-radial-gradient(center, circle, rgba(255, 255, 255, .35), rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 21%), -webkit-radial-gradient(center, circle, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 21%), -webkit-radial-gradient(center, circle farthest-corner, #f0f0f0, #c0c0c0);
+			background: radial-gradient(center, circle farthest-corner, rgba(255, 255, 255, 0) 50%, rgba(200, 200, 200, 1)), -webkit-radial-gradient(center, circle, rgba(255, 255, 255, .35), rgba(255, 255, 255, 0) 20%, rgba(255, 255, 255, 0) 21%), -webkit-radial-gradient(center, circle, rgba(0, 0, 0, .2), rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 21%), -webkit-radial-gradient(center, circle farthest-corner, #f0f0f0, #c0c0c0);
+			background-size: 100% 100%, 10px 10px, 10px 10px, 100% 100%;
+			background-position: top center, 1px 1px, 0px 0px, top center;
+
+			bottom: 0;
+		}
+    </style>
+</head>
+<body onload="document_load()" class='mbg2'>
+<h1 class="logo">Forces Solver</h1>
+<section class="demo">
+    <canvas id="canvas" width="700" height="500"></canvas>
+</section>
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    try {
+        var pageTracker = _gat._getTracker("UA-35346388-1");
+        pageTracker._trackPageview();
+    } catch (err) {
+    }
+</script>
+</body>
+</html>
