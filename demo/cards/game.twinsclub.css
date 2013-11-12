@@ -1,0 +1,307 @@
+@charset "UTF-8";
+
+#game5-container * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#game5-container div {
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -o-user-select: none;
+    -msie-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+#game5-container {
+    background: transparent;
+    /*border-left: 1px solid #111;*/
+    /*border-right: 1px solid #111;*/
+    /*padding: 0 20px 0 20px;*/
+    /*margin: auto;*/
+    width: auto;
+    height: auto;
+    /*min-height: 100%;*/
+    position: relative;
+    /*box-shadow: inset 0 0 300px black;*/
+    display: inline-block;
+}
+
+#game5-container .game-viewport {
+    -webkit-transform-style: preserve-3d;
+    -webkit-perspective: 300;
+    -webkit-perspective-origin: 50% 50%;
+    width: 100%;
+    height: 100%;
+    border: none;
+    overflow: hidden;
+    display: inline-block;
+    margin: 0 auto;
+    display: block;
+}
+
+#game5-container .game-stage {
+    background-color: rgba(156, 67, 23, 0.1);
+    position: relative;
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform-origin: 50% 50% 0;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    padding-top: 1px;
+}
+
+#game5-container .game-board {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0px;
+    left: 25px;
+    opacity: 1;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform-origin: 0% 0% 0;
+    -webkit-transform: translate3d(0px, 60px, 1px);
+}
+
+/* controls */
+
+#game5-container .game-stat {
+    background-color: rgba(250, 250, 250, .4);
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    /*width: 100%;*/
+    z-index: 5;
+
+    /*position: absolute;*/
+    position: fixed;
+    /*position: relative;*/
+    /*background-color: red;*/
+}
+
+#game5-container .game-stat h1 {
+    font-size: 14pt;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 50px;
+    /*display: table-cell;*/
+    height: 50px;
+    text-align: center;
+}
+
+#game5-container .game-stat .score {
+    background: url('assets/diamond.png') no-repeat, rgba(0,0,0,.1);
+    background-size: 50px;
+    background-position-x: 5px;
+    height: 50px;
+    display: inline-block;
+    padding-left: 50px;
+    margin: 5px;
+}
+
+#game5-container .game-stat .score span {
+    line-height: 50px;
+    margin: 0 10px;
+    font-size: 20pt;
+    font-weight: bold;
+    color: rgba(0,0,0,.5);
+}
+
+#game5-container .game-stat .time {
+    background: url('assets/time_frame.png') no-repeat, rgba(0,0,0,.1);
+    background-size: 44px;
+    background-position-y: 50%;
+    background-position-x: 5px;
+    height: 50px;
+    display: inline-block;
+    padding-left: 50px;
+    margin: 5px;
+}
+
+#game5-container .game-stat .time span {
+    line-height: 50px;
+    margin: 0 10px;
+    font-size: 20pt;
+    font-weight: bold;
+    color: rgba(0,0,0,.5);
+}
+
+#game5-container .game-stat .turns {
+    background: url('assets/counterclockwise-arrow.png') no-repeat, rgba(0,0,0,.1);
+    background-size: 41px;
+    background-position: 5px 50%;
+    height: 50px;
+    display: inline-block;
+    padding-left: 50px;
+    margin: 5px;
+}
+
+#game5-container .game-stat .turns span {
+    line-height: 50px;
+    margin: 0 10px;
+    font-size: 20pt;
+    font-weight: bold;
+    color: rgba(0,0,0,.5);
+}
+
+
+#game5-container .btn-start {
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    background-color: rgba(100, 0, 0, .8);
+    top: 100px;
+    z-index: 5;
+    /*visibility: hidden;*/
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform-origin: 0% 50% 0;
+    -webkit-transform: translate3d(-500px, 0px, 10px);
+
+    -webkit-transition: all 1.15s;
+    -moz-transition: all 1.15s;
+    -ms-transition: all 1.15s;
+    -o-transition: all 1.15s;
+    transition: all 1.15s;
+
+    margin: 0 auto;
+    display: block;
+    position: relative;
+}
+
+#game5-container .btn-start.visible {
+
+    -webkit-transform: translate3d(0px, 0px, 10px);
+}
+
+#game5-container .btn-start h1 {
+    color: white;
+    font-size: 20pt;
+
+    vertical-align: middle;
+    line-height: 150px;
+    /*display: table-cell;*/
+    height: 150px;
+    text-align: center;
+}
+
+/* cell */
+
+#game5-container .cell {
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+
+    transform-origin: 50% 50% 0;
+    -webkit-transform-origin: 50% 50% 0;
+
+    transform: none;
+    -webkit-transform: none;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: transparent;
+    width: 100px;
+    height: 100px;
+
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+}
+
+#game5-container .cellBack,
+#game5-container .cellFront {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 10%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    /*border: 3px solid rgba(50,50,50,0.5);*/
+}
+
+#game5-container .cellBack {
+    /*background-color: rgba(0, 255, 0, 1);*/
+
+    transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg);
+}
+
+#game5-container .cellFront {
+    /*background-color: rgba(255, 0, 0, 1);*/
+    background-image: url('assets/twinsclub/CardBackSide.png');
+
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+
+    background-size: contain;
+
+    transform: rotateX(0deg);
+    -webkit-transform: rotateX(0deg);
+}
+
+#game5-container .cellFlipped {
+    transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg);
+}
+
+#game5-container .cell.cellHide {
+    opacity: 0;
+    /*visibility: hidden;*/
+    /*width: 0;*/
+    /*height: 0;*/
+}
+
+.paused #game5-container .cell {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+@keyframes cellAnimation {
+    from {
+        background-color: rgba(255, 0, 0, 1);
+    }
+    to {
+        background-color: rgba(0, 255, 0, 1);
+    }
+}
+
+@-webkit-keyframes cellAnimation {
+    from {
+        -webkit-transform: rotateX(0deg);
+    }
+    to {
+        -webkit-transform: rotateX(180deg);
+    }
+}
+
+@-webkit-keyframes cellAnimationBack {
+    from {
+        -webkit-transform: rotateX(180deg) rotateZ(0deg);
+    }
+    to {
+        -webkit-transform: rotateX(0deg) rotateZ(0deg);
+    }
+}
+
+@-webkit-keyframes cellAnimationHide {
+    from {
+        opacity: 1;
+        -webkit-transform: rotateX(180deg) rotateZ(0deg) translate3d(0px, 0px, 0px);
+    }
+    to {
+        left: 0;
+        opacity: 0;
+        -webkit-transform: rotateX(180deg) rotateZ(0deg) translate3d(-100px, 0px, 5px);
+    }
+}
