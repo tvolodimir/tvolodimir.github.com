@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+	<meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Puzlle</title>
+    <meta name="description" content="Game 'puzzle' in pure JavaScript">
+    <meta name="author" content="Terebus Volodymyr - tvolodimir">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"/>-->
+
+	<meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<!--    <script type="text/javascript">
+        window.scope = window;
+    </script>
+    <script type="text/javascript" src="js-modules/simpleModuleManager.js"></script>
+    <script type="text/javascript" src="js-modules/defineModule.js"></script>
+    <script type="text/javascript" src="js-modules/jsshiv.js"></script>
+    <script type="text/javascript" src="js-modules/jsextend.js"></script>
+    <script type="text/javascript" src="js-modules/DataTimeBuffer.js"></script>
+    <script type="text/javascript" src="js-modules/MultiLayeredCanvas.js"></script>
+
+    <script type="text/javascript" src="js-modules/InputExtension.js"></script>
+    <script type="text/javascript" src="js-modules/CanvasDebugShape.js"></script>
+    <script type="text/javascript" src="js-modules/Loader.js"></script>
+    <script type="text/javascript" src="js-modules/Transforms.js"></script>
+    <script type="text/javascript" src="puzzle.core.js"></script>
+    <script type="text/javascript" src="puzzle.app.js"></script>-->
+
+    <script type="text/javascript" src="game.puzzle.pack.js"></script>
+
+    <script type="text/javascript">
+		window.addEventListener("orientationchange", updateOrientation);
+
+        function updateOrientation(e) {
+            if (!puzzleApp) return;
+
+            //puzzleApp._resizeFix();
+
+            console.log('updateOrientation', window.orientation);
+        }
+		
+        var puzzleApp;
+
+        var resources = [
+            {
+                src: 'pics/harrypotter.jpg',
+                width: 1900,
+                height: 1200,
+                data: null
+            },
+            {
+                src: 'http://st.gdefon.ru/wallpapers_original/wallpapers/156334_madagaskar_multfilm_zebra_zhiraf_pingviny_lev_bege_1920x1080_(www.GdeFon.ru).jpg'
+            },
+            {
+                src: 'http://1.bp.blogspot.com/-ERPa9-zC-N8/UIkwNj_4JoI/AAAAAAAAAE4/akX3NIBh_Sw/s1600/cartoon_wallpaper.jpg'
+            },
+            {
+                src :'http://24.media.tumblr.com/tumblr_mbhk0iI3tJ1rtitxmo1_1280.jpg'  // Лис
+            },
+            {
+                src :'http://25.media.tumblr.com/tumblr_m2t8nmVmoD1r0a165o1_1280.jpg' // париж
+            },
+            {
+                src:'http://24.media.tumblr.com/tumblr_mdp8nttvWs1qeccpho1_500.jpg' // нюйорк
+            },
+            {
+                src:'http://25.media.tumblr.com/tumblr_me6yfstwbR1rkurc7o1_500.jpg'// лис
+            },
+            {
+                src:'http://24.media.tumblr.com/tumblr_mcq4q0WPRj1qgps7xo1_500.png'//нюйорк
+            },
+            {
+                src:'http://25.media.tumblr.com/tumblr_mapyoweE2d1r12oofo1_1280.jpg'//кімната
+            },
+            {
+                src:'http://25.media.tumblr.com/tumblr_mcu2briGta1rsqx8so1_500.jpg'//олень
+            },
+            {
+                src:'http://25.media.tumblr.com/tumblr_mbnv8w6V2x1rnqouso1_500.png'//гори фотоапарат
+            },
+            {
+                src:'http://25.media.tumblr.com/tumblr_lvjdkok8991qe4vldo1_500.jpg'//сова
+            },
+            {
+                src:'http://25.media.tumblr.com/tumblr_m1nogyqXro1qb6f1wo1_500.jpg'//чб криві лініх
+            },
+            {
+                src:'http://25.media.tumblr.com/tumblr_m865sbWB241qa9omho1_1280.jpg' // гори монастирь
+            },
+            {
+                src:'http://25.media.tumblr.com/eb54596b6aaf2f376e671d725f234f2b/tumblr_mfsge008pV1r6jg4no1_500.jpg'//кіт
+            },
+            {
+                src:'http://25.media.tumblr.com/40905e23be6b6f6c4aa184fafb47cc82/tumblr_mf63a7SquC1qcwcfmo1_1280.jpg'//нюйорк
+            },
+            {
+                src:'http://25.media.tumblr.com/tumblr_maok6jx8bb1qfb46yo1_500.jpg'//міісто
+            },
+            {
+                src:'http://24.media.tumblr.com/8c7a6b44acbd27d4b105484a87d99f4c/tumblr_mf879sVVS21rbdflmo1_1280.png'//гора
+            },
+            {
+                src:'http://25.media.tumblr.com/tumblr_mdefg51yyA1qjvnc4o1_1280.jpg'//Гора
+            },
+            {
+                src:'http://25.media.tumblr.com/tumblr_mcz91yr0Oj1rhzyw0o1_500.jpg'
+            }
+        ];
+
+        var $r = window.$simpleModuleManager.getModule;
+        var getRandomInt = $r('puzzle-core').getRandomInt;
+        var Loader = $r('Loader').Loader;
+        var PuzzleApp = $r('puzzle-app').PuzzleApp;
+
+        function createGame (r) {
+                var ratio = r.data.width/r.data.height;
+
+                var t = [];
+                if (ratio<=1) {
+                    for (var i = 3; i < 5; i++) {
+                        var j = Math.round(i / ratio);
+                        //if (j < 6) {
+                        t.push({i: i, j: j, r: i / j, ko: (i / j) / ratio});
+                        //}
+                    }
+                }
+                else {
+                    for (var j = 3; j < 5; j++) {
+                        var i = Math.round(j * ratio);
+                        //if (j < 6) {
+                        t.push({i: i, j: j, r: i / j, ko: (i / j) / ratio});
+                        //}
+                    }
+                }
+
+                t = t.sort(function (a, b) {
+                    return Math.abs(1 - a.ko) - Math.abs(1 - b.ko);
+                });
+                var index = 0;
+                for(var i=0;i< t.length;i++){
+                    if (t[i].ko > 1.2 || t[i].ko<0.8 ) {
+                        index = i-1;
+                        break;
+                    }
+                    else if (i== t.length-1){
+                        index = t.length-1;
+                    }
+                }
+
+                var ii = getRandomInt(0,Math.max(0,index));
+
+                console.log(ratio, t);
+
+                var kx = t[ii].i;
+                var ky = t[ii].j;
+
+                var k  = r.data.width /kx;
+                k = Math.min(70, k);
+                k = Math.max(70, k);
+                puzzleApp.initGame({image: r, k: k, kx: kx, ky: ky});
+        }
+
+        function document_load() {
+            puzzleApp = new PuzzleApp();
+
+            if (location.hash === '#debug' || location.search === '?debug') {
+                puzzleApp.setDebugMode(true);
+            }
+
+
+            var r = resources[getRandomInt(0, resources.length - 1)];
+            new Loader([r]).load(function () {
+                createGame(r);
+            });
+
+
+            puzzleApp.onGameCompleted = function () {
+                var r = resources[getRandomInt(0, resources.length - 1)];
+                new Loader([r]).load(function () {
+                    createGame(r);
+                });
+            };
+
+
+        }
+    </script>
+
+    <style type="text/css">
+            /* default */
+        #canvasesdiv canvas, #canvasesdiv {
+            -webkit-user-select: none;
+            margin: 0;
+            padding: 0;
+            border: none;
+            background-color: transparent;
+            visibility: visible;
+            outline: none;
+        }
+
+        #canvasesdiv {
+            position: relative;
+        }
+
+        #canvasesdiv canvas {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+            /* custom */
+        html, body {
+            background-color: transparent;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body.puzzle {
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        #canvasesdiv.puzzle {
+            width: 100%;
+            height: 100%;
+            /*cursor: url('content/1.png') 15 15, auto;*/
+            border: 1px solid #00f;
+        }
+
+        @media screen and (orientation:portrait) and (max-device-width: 720px) {
+            body.puzzle {
+                /*padding: 40px 0 40px 0;*/
+                padding: 0;
+            }
+
+            #canvasesdiv.puzzle {
+                /*border: 1px solid #f00;*/
+                border: none;
+                box-sizing: border-box;
+            }
+        }
+
+        @media screen and (orientation:landscape) and (max-device-width: 720px) {
+            body.puzzle {
+                /*padding: 0 40px 0 40px;*/
+                padding: 0;
+            }
+
+            #canvasesdiv.puzzle {
+                /*border: 1px solid #0f0;*/
+                border: none;
+                box-sizing: border-box;
+            }
+        }
+    </style>
+
+</head>
+<body class='puzzle' onload='document_load()'>
+<!--[if lt IE 7]>
+	<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+<div id="canvasesdiv" class='puzzle'>
+    <canvas id="layer3" style="z-index: 0;" height="100px" width="100px"></canvas>
+    <canvas id="layer2" style="z-index: 1;" height="100px" width="100px"></canvas>
+    <canvas id="layer1" style="z-index: 2;" height="100px" width="100px"></canvas>
+    <canvas id="layer0" style="z-index: 3;" height="100px" width="100px"></canvas>
+</div>
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    try {
+        var pageTracker = _gat._getTracker("UA-35346388-1");
+        pageTracker._trackPageview();
+    } catch (err) {
+    }
+</script>
+</body>
+</html>
