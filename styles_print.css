@@ -45,7 +45,7 @@ h3{
 }
 
 #demos h1  a/*[href^="/"]*/:after {
-    content: " (http://tvolodimir.github.io/cv" attr(href) ") ";
+    content: " (http://tvolodimir.github.io" attr(href) ") ";
    font-size: 90%;
    }
 
