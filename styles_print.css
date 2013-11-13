@@ -44,8 +44,8 @@ h3{
     font-size: 1.0em !important;
 }
 
-#demos h1  a[href^="/"]:after {
-    content: " (http://tvolodimir.koding.com" attr(href) ") ";
+#demos h1  a/*[href^="/"]*/:after {
+    content: " (http://tvolodimir.github.io/cv" attr(href) ") ";
    font-size: 90%;
    }
 
