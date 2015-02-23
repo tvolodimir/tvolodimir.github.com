@@ -1,128 +1,217 @@
-/*   RESET   */
-/*html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, 
-samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, 
-tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {  
-    margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent;} */
-body {line-height:1;} 
-article,aside,details,figcaption,figure, footer,header,hgroup,menu,nav,section {display:block;} 
-nav ul, nav ol {list-style:none;} blockquote, q {quotes:none;} 
-blockquote:before, blockquote:after, q:before, q:after {content:''; content:none;} 
-a {margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent;} 
-ins {background-color:#ff9; color:#000; text-decoration:none;} 
-mark {background-color:#ff9; color:#000; font-style:italic; font-weight:bold;} 
-del {text-decoration: line-through;} 
-abbr[title], dfn[title] {border-bottom:1px dotted; cursor:help;} 
-table {border-collapse:collapse; border-spacing:0;} 
-hr {display:block; height:1px; border:0; margin:1em 0; padding:0;} 
-input, select {vertical-align:middle;}
-
-
-a:link {
-color: #000;
-}
-a:visited {
-color: #000;
-}
-a:hover {
-color: #000;
-}
-a:active {
-color: #000;
-}
-
-a {text-decoration: none}
-body{
+body {
     font-size: 0.9em !important;
 }
-h1{
+
+h1 {
     font-size: 1.1em !important;
 }
-h2{
+
+h2 {
     font-size: 1.05em !important;
 }
-h3{
+
+h3 {
     font-size: 1.0em !important;
 }
 
-#demos h1  a/*[href^="/"]*/:after {
-    content: " (http://tvolodimir.github.io" attr(href) ") ";
-   font-size: 90%;
-   }
-
-
-/* langs */
-.lang {display:none;}
-
-/** skills details */
-#skills dd small:before{
-    content:" (";
-}
-#skills dd small:after{
-    content:") ";
-}
-#skills dd {
-    font-size:0.9em;
+section {
+    clear: both;
+    font-size: 0.9em;
+    overflow: hidden;
+    padding: 5px 0 5px 0;
 }
 
-/* ava */
-.vcard img.ava {
-    width:100px;
+section > h1 {
+    font-size: 1.25em !important;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+section > p {
+    line-height: 1.5em;
+    padding: 0 15px 5px;
+}
+
+article {
+    padding: 0 15px 5px;
+}
+
+/* ==========================================================================
+   contact
+   ========================================================================== */
+
+header img.ava {
+    width: 100px;
     float: right !important;;
 }
 
-/* languages dash */
-#languages span:before{
-    content:" - ";
+header h1.fn {
+    font-size: 1.7em !important;
+    font-weight: bold;
+    padding: 5px 0 5px 0;
 }
 
-#skills dl {margin-left: 15px;}
+header h2.role {
+    font-size: 1.2em !important;
+    padding: 5px 0 5px 0;
+}
+
+header ul {
+    padding-bottom: 5px;
+}
+
+header .head-section {
+    display: none;
+}
+
+.contact {
+    margin-left: 15px;
+    float: left;
+}
+
+.contact li {
+    padding: 2px 0;
+    list-style-type: none;
+}
+
+.contact li:before {
+    content: none !important;
+}
+
+.social {
+    margin-left: 15px;
+    float: left;
+}
+
+.social li {
+    padding: 2px 0;
+    list-style-type: none;
+}
+
+.social li img {
+    display: none;
+}
+
+/* ==========================================================================
+   skills
+   ========================================================================== */
+
+#skills dl {
+    margin-left: 15px;
+    padding-bottom: 5px;
+}
+
 #skills dl dd {
-    display: inline; float: left; 
-    padding: 0px 0px 20px 0px; 
-    margin: 0px 10px 0px 0px;
-    
+    display: inline-block;
+    padding: 3px 2px;
 }
+
 #skills dl dd:after {
-    content:", ";
-}
-#skills dl dt {
-    clear: left; display: block; 
-    margin: 0px 50px 0px 0px;
+    content: ", ";
 }
 
 #skills dl dt {
-    /*text-decoration: underline*/
-    font-size: 1.05em !important;
-    font-weight:bold;
+    display: inline;
+    font-weight: bold;
+}
+
+#skills dl dt:before {
+    content: "";
+    display: block;
 }
 
 #skills dl dt:after {
-    content:": ";
+    content: ": ";
 }
 
-section {font-size: 0.9em;  overflow: hidden; }
+#skills dd small {
+    margin: 0 0 0 5px;
+}
 
-/* education separate */
-#education ul li span:before {content:", ";}
+#skills dd small:before {
+    content: "(";
+}
 
-/* experience */
-#experience article p {padding-left: 20px;}
-#experience article h1 span {font-size: 0.8em; font-weight: normal;}
-#experience article h2 {display: inline; font-size: 0.9em; font-weight: normal; padding: 0px;}
+#skills dd small:after {
+    content: ")";
+}
 
-/* experience time */
-#experience article .start, #experience article .end { font-size: 0.75em;}
-#experience article .start:after {content:" - ";}
+/* ==========================================================================
+   experience
+   ========================================================================== */
 
+#experience article h1,
+#experience article h2 {
+    border-left: 1px solid black;
+    padding-left: 5px;
+}
 
-.social img { display:none;}
-.social .title {display:none;}
-.social a.slogo:after {
-    content: attr(href);
-   font-size: 90%;
-   }
- #experience article a[href^="http"]:after {   
-     content: ' (' attr(href) ') ';
-   font-size: 90%;}
- 
-    
+#experience article h1 {
+    line-height: 1.5em;
+}
+
+#experience article span + p,
+#experience article time + p {
+    padding-top: 10px;
+}
+
+#experience article h1 span {
+    font-size: 0.8em;
+    font-weight: normal;
+}
+
+#experience article h2 {
+    display: inline;
+}
+
+#experience article .start,
+#experience article .end {
+    font-size: 0.75em;
+}
+
+#experience article .start:after {
+    content: " - ";
+}
+
+#experience article a[href^="http"]:after {
+    content: ' (' attr(href) ') ';
+    font-size: 90%;
+}
+
+#experience article p {
+    line-height: 1.5em;
+    padding: 0 15px 15px;
+}
+
+/* ==========================================================================
+   ???
+   ========================================================================== */
+
+#education ul {
+    padding-left: 48px;
+}
+#education ul li {
+    padding: 2px 0;
+}
+
+#education ul li span:before {
+    content: ", ";
+}
+
+#languages ul {
+    padding-left: 48px;
+}
+#languages ul li {
+    padding: 2px 0;
+}
+
+#languages span:before {
+    content: " - ";
+}
+
+#hobbies ul {
+    padding-left: 48px;
+}
+#hobbies ul li {
+    padding: 2px 0;
+}

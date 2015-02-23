@@ -1,143 +1,423 @@
-/*   RESET   */
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure,  footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent;} body {line-height:1;} article,aside,details,figcaption,figure, footer,header,hgroup,menu,nav,section {display:block;} nav ul, nav ol {list-style:none;} blockquote, q {quotes:none;} blockquote:before, blockquote:after, q:before, q:after {content:''; content:none;} a {margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent;} ins {background-color:#ff9; color:#000; text-decoration:none;} mark {background-color:#ff9; color:#000; font-style:italic; font-weight:bold;} del {text-decoration: line-through;} abbr[title], dfn[title] {border-bottom:1px dotted; cursor:help;} table {border-collapse:collapse; border-spacing:0;} hr {display:block; height:1px; border:0; margin:1em 0; padding:0;} input, select {vertical-align:middle;}
-
-
 /*   MAIN STYLES   */
-html {background: #FCFCFC; color: #333; font-family: 'PT Sans',sans-serif; height: 100%;}
-body {height: auto; margin: 0 auto; max-width: 978px; padding: 10px;padding-bottom: 100px;}
-a, #skills dl dd, img {
-    -webkit-transition: all 0.15s ; 
-    -moz-transition: all 0.15s ; 
-    -ms-transition: all 0.15s ; 
-    -o-transition: all 0.15s ;
-    transition: all 0.15s ;
+html {
+    background: #FCFCFC;
+    color: #333;
+    font-family: 'PT Sans', sans-serif;
+    height: 100%;
+    /*background: url(http://dabblet.com/img/noise.png);
+    background-color: #F5F2F0;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    line-height: 1.6em;
+    text-shadow: 0 2px 0 white;
+    color: #222;*/
 }
 
-.lang {
-    list-style: none; 
-    margin-bottom: 15px; 
-    overflow: hidden; 
-    width:300px;
-    
-    background: #fff; 
-    margin: 0px auto; 
-    padding: 3px; 
-    /*-webkit-border-radius: 25px 0px 15px 0px/10px 0px 15px 0px; 
-    border-radius: 25px 0px 15px 0px/10px 0px 15px 0px; 
-    -webkit-box-shadow:  0px 1px 1px 0px rgba(0, 0, 0, 0.35);  
-    box-shadow:  0px 1px 1px 0px rgba(0, 0, 0, 0.35); */
-    
-    position: relative;
-   
-top: -10px;
+body {
+    height: auto;
+    margin: 0 auto;
+    max-width: 978px;
+    padding: 10px;
+    padding-bottom: 100px;
 }
-.lang li {
-    
-    display: inline; 
-    float: left; 
-    
-    border-right: 1px solid #ccc; 
-    font-size: 0.8em; 
-    padding: 2px 0;
-    padding: 6px 2px;
-    
-    text-align: center;
-    width: 31%; 
-    overflow: hidden;
-    
-}
-.lang li:last-child {border: none}
-.lang .uk{
-    background: #C6D6C5; 
-    border-radius: 25px 0px 0px 0px/10px 0px 0px 0px; 
-    box-shadow:  0px 1px 1px 0px rgba(0, 0, 0, 0.35);
-}
-.lang .ru{
-    background: #C6D6C5; 
-    border-radius:0px; 
-    box-shadow:  0px 1px 1px 0px rgba(0, 0, 0, 0.35);
-}
-.lang .en{
-    background: #C6D6C5; 
-    border-radius: 0px 0px 15px 0px/0px 0px 15px 0px; 
-    box-shadow:  0px 1px 1px 0px rgba(0, 0, 0, 0.35);
-}
-.lang .uk:hover, .lang .ru:hover, .lang .en:hover {
-     background-color: #c6d6c5; 
-    -webkit-box-shadow: inset 0px 2px 1px 1px rgba(0, 0, 0, 0.15); 
-    box-shadow: inset 0px 2px 1px 1px rgba(0, 0, 0, 0.15);
-}
-.lang .active:hover {
-     background-color: #EDF0EB; 
-    -webkit-box-shadow: inset 0px 2px 1px 1px rgba(0, 0, 0, 0.15); 
-    box-shadow: inset 0px 2px 1px 1px rgba(0, 0, 0, 0.15);
-}
-.lang .active {
-    background: #EDF0EB;
-    -webkit-box-shadow: inset 0px 2px 1px 1px rgba(0, 0, 0, 0.15); 
-    box-shadow: inset 0px 2px 1px 1px rgba(0, 0, 0, 0.15);
-}
-.lang li a {
-    color: #000;
-    background: transparent; 
-    font-size: 0.9em; 
-    padding: 0;
-    text-align: center; 
-    padding: 0;
-   
-    text-decoration: none;
-    overflow: hidden;
+
+a, #skills dl dd, img {
+    -webkit-transition: all 0.15s;
+    -moz-transition: all 0.15s;
+    -ms-transition: all 0.15s;
+    -o-transition: all 0.15s;
+    transition: all 0.15s;
 }
 
 /*   HEADER   */
-header.vcard {margin-bottom: 10px; overflow: hidden;}
-.fn {font-size: 2.7em; font-weight: bold; padding: 5px 0px 5px 10px;}
-.role {background: #999; color: #FCFCFC; font-weight: normal; margin: 4px 0 13px; padding: 5px 5px 5px 10px; -webkit-border-radius: 5px; border-radius: 5px; -webkit-box-shadow:  0px 1px 1px 0px rgba(0, 0, 0, 0.35);  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);}
-.contact {list-style: none; margin-bottom: 15px; overflow: hidden;}
-.contact li {border-right: 1px solid #ccc; display: inline; float: left; font-size: 0.8em; padding: 2px 0; text-align: center; width: 24%; overflow: hidden}
-.contact li:last-child {border: none}
-.contact a {color: #000;}
-.contact a:hover {background-color: #eee; text-decoration: none}
+header.vcard {
+    margin-bottom: 10px;
+    overflow: hidden;
+}
 
-.email:before{content:"✉ ";-webkit-user-select: none;}
-.tel:before{content:"✆ ";-webkit-user-select: none;}
-.adr:before{content:"⌂ ";-webkit-user-select: none;}
+.fn {
+    font-size: 2.7em;
+    font-weight: bold;
+    padding: 5px 0px 5px 10px;
+}
 
-.contact .email {width:30%;}
-.contact .tel {width:30%;}
-.contact .adr {width:20%;}
-.contact .old {width:19%;}
-.role, .fn{ width:100%; }
+.role {
+    background: #383838;
+    color: #FCFCFC;
+    font-weight: normal;
+    margin: 4px 0 13px;
+    padding: 5px 5px 5px 10px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+.role, .fn {
+    width: 100%;
+}
 
 .vcard img.ava {
-    width:100px;
-    float: right; 
-    /*-webkit-filter: blur(3px) brightness(0.4) contrast(0.8) grayscale(0.3) opacity(0.1) saturate(0.8);*/ 
-    -webkit-transition: all 0.15s ; 
-    -moz-transition: all 0.15s ; 
-    -ms-transition: all 0.15s ; 
-    -o-transition: all 0.15s ;
-    transition: all 0.15s ;
+    width: 100px;
+    float: right;
+    /*-webkit-filter: blur(3px) brightness(0.4) contrast(0.8) grayscale(0.3) opacity(0.1) saturate(0.8);*/
+    -webkit-transition: all 0.15s;
+    -moz-transition: all 0.15s;
+    -ms-transition: all 0.15s;
+    -o-transition: all 0.15s;
+    transition: all 0.15s;
     /*-webkit-filter: brightness(0.1) grayscale(0.1); */
     -webkit-border-radius: 15px;
     border-radius: 25px 0px 15px 0px/10px 0px 15px 0px;
 }
+
 .vcard img.ava:hover {
     -webkit-border-radius: 5px;
     border-radius: 5px;
     /*-webkit-filter: brightness(0.05) grayscale(0.0); */
 }
+
 /*   CONTENT   */
-section {font-size: 0.9em; margin: 30px 0; overflow: hidden; }
-section h1 {border-left: 2px solid #DDD; font-size: 1.25em; margin-bottom: 10px; padding-left: 5px; text-transform: uppercase;}
-section p {line-height: 1.5em; padding: 0 20px 5px;}
+section {
+    font-size: 0.9em;
+    margin: 30px 0;
+    overflow: hidden;
+}
+
+section h1, .head-section {
+    border-left: 2px solid #DDD;
+    font-size: 1.25em;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    text-transform: uppercase;
+}
+
+section p {
+    line-height: 1.5em;
+    padding: 0 20px 5px;
+}
+
+section h1 a, section h1 a:visited {
+    color: #333
+}
+
+/* ==========================================================================
+   contact
+   ========================================================================== */
+
+.contact {
+    list-style: none;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.contact li {
+    border-right: 1px solid #ccc;
+    display: inline;
+    float: left;
+    font-size: 0.8em;
+    padding: 2px 0;
+    text-align: center;
+    width: 15%;
+    overflow: hidden
+}
+
+.contact li:last-child {
+    border: none;
+}
+
+.contact a {
+    color: #000;
+}
+
+.contact a:hover {
+    background-color: #eee;
+    text-decoration: none
+}
+
+.contact .email {
+    width: 30%;
+}
+
+.contact .tel {
+    width: 20%;
+}
+
+.contact .skype {
+    width: 13%;
+}
+
+.contact .adr {
+    width: 17%;
+}
+
+.contact .old {
+    width: 15%;
+}
+
+.contact .skype:before,
+.contact .email:before,
+.contact .tel:before,
+.contact .adr:before,
+.contact .old:before {
+    content: "";
+    width: 16px;
+    display: inline-block;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 4px;
+    -webkit-user-select: none;
+}
+
+.contact .skype:before {
+    background-image: url("cv/skype_B-16.png");
+}
+
+.contact .email:before {
+    background-image: url("cv/internt_web_technology-14-16.png");
+}
+
+.contact .tel:before {
+    background-image: url("cv/telephone.png");
+}
+
+.contact .old:before {
+    background-image: url("cv/common_calendar_day-16.png");
+}
+
+.contact .adr:before {
+    background-image: url("cv/internt_web_technology-08-16.png");
+}
+
+/* ==========================================================================
+   social
+   ========================================================================== */
+
+.social {
+    display: inline-block;
+}
+
+.social li {
+    padding: 3px 0;
+    margin: 0 3px;
+    float: left;
+    list-style: none;
+    overflow: hidden;
+}
+
+.social li .title {
+    display: inline-block;
+    -webkit-transform: translate(0px, 0px) rotateZ(0deg);
+    vertical-align: text-bottom;
+    border-radius: 0;
+    padding: 10px;
+    text-decoration: none;
+    border: none;
+    color: #444;
+}
+
+.social li:hover {
+    background-color: #eee;
+    color: #444;
+}
+
+.social li img {
+    width: 30px;
+    padding-right: 10px;
+}
+
+/* ==========================================================================
+   skills
+   ========================================================================== */
+
+#skills dl {
+    margin-left: 15px;
+}
+
+#skills dl dt {
+    clear: left;
+    display: inline;
+    float: left;
+    margin: 10px 5px 10px 0;
+    padding: 2px;
+    text-align: right;
+    width: 150px;
+}
+
+#skills dl dd {
+    background: #ddeedc;
+    display: inline;
+    float: left;
+    font-size: 0.9em;
+    margin: 10px 4px;
+    padding: 10px;
+    -webkit-border-radius: 25px 0px 15px 0px/10px 0px 15px 0px;
+    border-radius: 25px 0px 15px 0px/10px 0px 15px 0px;
+    -webkit-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.35);
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.35);
+    cursor: default
+}
+
+#skills dl dd:hover {
+    background-color: #c6d6c5;
+    -webkit-box-shadow: inset 0px 2px 1px 1px rgba(0, 0, 0, 0.15);
+    box-shadow: inset 0px 2px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+#skills dd small {
+    background: #CCDBC5;
+    -webkit-border-radius: 7px 0px 9px 0px/7px 0px 6px 0px;
+    border-radius: 7px 0px 9px 0px/7px 0px 6px 0px;
+    padding: 3px;
+    margin: 0px 0px 0px 13px;
+}
+
+#skills dl dd.level2 {
+    /*background:#BED6BC;*/
+    -webkit-box-shadow: 2px 2px 1px rgba(70, 70, 70, 1);
+    -moz-box-shadow: 2px 2px 1px rgba(70, 70, 70, 1);
+    box-shadow: 2px 2px 1px rgba(70, 70, 70, 1);
+}
+
+#skills dl dd.level3 {
+    /*background:#82a580;*/
+    -webkit-box-shadow: 3px 3px 1px rgba(70, 70, 70, 1);
+    -moz-box-shadow: 3px 3px 1px rgba(70, 70, 70, 1);
+    box-shadow: 3px 3px 1px rgba(70, 70, 70, 1);
+}
+
+#skills dl dd.level1 {
+    /* background:#ddeedc;*/
+    -webkit-box-shadow: 1px 1px 1px rgba(70, 70, 70, 1);
+    -moz-box-shadow: 1px 1px 1px rgba(70, 70, 70, 1);
+    box-shadow: 1px 1px 1px rgba(70, 70, 70, 1);
+    color: #707070;
+}
+
+#skills dl dd.level1:hover,
+#skills dl dd.level2:hover,
+#skills dl dd.level3:hover {
+    background-color: #c6d6c5;
+    -webkit-box-shadow: inset 0px 2px 1px 1px rgba(0, 0, 0, 0.15);
+    box-shadow: inset 0px 2px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+/*#skills dl dd.fav{*/
+/*-webkit-box-shadow: 0px 0px 5px rgba(70, 70, 70, 1);*/
+/*-moz-box-shadow:    0px 0px 5px rgba(70, 70, 70, 1);*/
+/*box-shadow:         0px 0px 5px rgba(70, 70, 70, 1);*/
+/*border: 0px dotted black;*/
+/*}*/
+/*#skills dl dd.fav:hover {*/
+/*-webkit-box-shadow: 0px 0px 7px rgba(158, 175, 105, 1),inset 0px 2px 1px 1px rgba(0, 0, 0, 0.15); */
+/*box-shadow: 0px 0px 7px rgba(158, 175, 105, 1),inset 0px 2px 1px 1px rgba(0, 0, 0, 0.15); */
+/*}*/
+
+/* ==========================================================================
+   experience
+   ========================================================================== */
+
+#experience article {
+    margin: 15px 0 37px 95px;
+    padding-left: 5px;
+    position: relative;
+    border: 1px solid #FCFCFC
+}
+
+#experience article:last-child {
+    margin-bottom: 0
+}
+
+#experience article:hover {
+    border: 1px dotted #ddd;
+    background: #fefefe
+}
+
+#experience article h1 {
+    border: none;
+    font-size: 1.2em;
+    font-style: italic;
+    font-weight: bold;
+    padding: 0;
+    text-transform: none;
+}
+
+#experience article h1 a {
+    color: #333;
+    text-decoration: none
+}
+
+#experience article h1 a:hover {
+    background-color: #333;
+    color: #eee;
+    padding: 0px 5px 0px 5px;
+    -webkit-border-radius: 7px 0px 9px 0px/7px 0px 6px 0px;
+    border-radius: 7px 0px 9px 0px/7px 0px 6px 0px;
+}
+
+#experience article h1 span {
+    color: #777;
+    font-size: 0.8em;
+    font-weight: normal;
+}
+
+#experience article h2 {
+    background: #eee;
+    display: inline;
+    font-size: 0.9em;
+    font-weight: normal;
+    padding: 3px;
+    -webkit-border-radius: 7px 0px 9px 0px/7px 0px 6px 0px;
+    border-radius: 7px 0px 9px 0px/7px 0px 6px 0px;
+}
+
+#experience article .start, #experience article .end {
+    background: #fff;
+    border-top: 1px dashed #ddd;
+    font-size: 0.75em;
+    left: -80px;
+    padding: 4px 0;
+    position: absolute;
+    text-align: center;
+    top: 19px;
+    width: 60px;
+}
+
+#experience article .end {
+    top: 0;
+    border: none
+}
+
+#experience article p {
+    font-size: 0.9em;
+    line-height: 22px;
+    margin: 10px 0 0;
+    padding-left: 0;
+}
+
+.techs {
+    font-size: 0.9em;
+    padding: 0px 5px;
+    background: #EDF0EB;
+    border-radius: 7px 0px 9px 0px/7px 0px 6px 0px;
+    margin: 0px 0px 0px 10px;
+}
 
 .pr_name a, .pr_name a:visited {
-    text-decoration:none;
-    color:#333;
-    border-bottom:1px dashed;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px dashed;
 }
-.github_url:after{
+
+.pr_name:before {
+    content: "«";
+}
+
+.pr_name:after {
+    content: "»";
+}
+
+.github_url:after {
     content: '';
     background-image: url('https://github.com/favicon.ico');
     width: 15px;
@@ -149,282 +429,192 @@ section p {line-height: 1.5em; padding: 0 20px 5px;}
     top: 6px;
     margin: 3px;
 }
-section h1 a,section h1 a:visited { color:#333 }
-/*#demos h1 a {color: #333; text-decoration: none}
-#demos h1 a:hover {
-    background-color: #333; 
-    color: #eee;
-    padding: 0px 5px 0px 5px;
-    -webkit-border-radius:  7px 0px 9px 0px/7px 0px 6px 0px;
-    border-radius:  7px 0px 9px 0px/7px 0px 6px 0px;
-    } */
- #demos article {padding-left:10px;}  
- #demos .demim {
-    height:150px;
 
-    -webkit-transition: all 0.15s ; 
-    -moz-transition: all 0.15s ; 
-    -ms-transition: all 0.15s ; 
-    -o-transition: all 0.15s ;
-    transition: all 0.15s ;
-    -webkit-border-radius: 15px;
-    border-radius: 5px 0px 5px 0px/2px 0px 5px 0px;
-    
-    margin: 20px 20px 4px 4px;
-    -webkit-box-shadow: 1px 1px 6px rgba(70, 70, 70, 1);
-    -moz-box-shadow:    1px 1px 6px rgba(70, 70, 70, 1);
-    box-shadow:         1px 1px 6px rgba(70, 70, 70, 1);
- }
-    
-     #demos .demim:hover {
-    height:150px;
+/* ==========================================================================
+   education
+   ========================================================================== */
 
-
-    -webkit-border-radius: 15px;
-    border-radius: 25px 0px 15px 0px/10px 0px 15px 0px;
-    
-    -webkit-box-shadow: 0px 0px 2px rgba(70, 70, 70, 1);
-    -moz-box-shadow:    0px 0px 2px rgba(70, 70, 70, 1);
-    box-shadow:         0px 0px 2px rgba(70, 70, 70, 1);
- }
- 
-#skills dl {margin-left: 15px;}
-#skills dl dt {clear: left; display: inline; float: left; margin: 10px 5px 10px 0; padding: 2px; text-align: right; width: 150px;}
-#skills dl dd {
-    background: #ddeedc; 
-    display: inline; float: left; 
-    font-size: 0.9em; 
-    margin: 10px 4px; 
-    padding: 10px; 
-    -webkit-border-radius: 25px 0px 15px 0px/10px 0px 15px 0px; 
-    border-radius: 25px 0px 15px 0px/10px 0px 15px 0px; 
-    -webkit-box-shadow:  0px 1px 1px 0px rgba(0, 0, 0, 0.35);  
-    box-shadow:  0px 1px 1px 0px rgba(0, 0, 0, 0.35); 
-    cursor: default
-}
-#skills dl dd:hover {
-    background-color: #c6d6c5; 
-    -webkit-box-shadow: inset 0px 2px 1px 1px rgba(0, 0, 0, 0.15); 
-    box-shadow: inset 0px 2px 1px 1px rgba(0, 0, 0, 0.15); 
-}
-#skills dd small {
-    background: #CCDBC5; 
-    -webkit-border-radius:  7px 0px 9px 0px/7px 0px 6px 0px;
-    border-radius:  7px 0px 9px 0px/7px 0px 6px 0px;
-    padding: 3px; 
-    margin: 0px 0px 0px 13px; 
+#education h2 {
+    padding-left: 20px;
 }
 
-#skills dl dd.level2{
-    /*background:#BED6BC;*/
-    -webkit-box-shadow: 2px 2px 1px rgba(70, 70, 70, 1);
-    -moz-box-shadow:    2px 2px 1px rgba(70, 70, 70, 1);
-    box-shadow:         2px 2px 1px rgba(70, 70, 70, 1);
-}
-#skills dl dd.level3{
-    /*background:#82a580;*/
-    -webkit-box-shadow: 3px 3px 1px rgba(70, 70, 70, 1);
-    -moz-box-shadow:    3px 3px 1px rgba(70, 70, 70, 1);
-    box-shadow:         3px 3px 1px rgba(70, 70, 70, 1);
-}
-#skills dl dd.level1{
-   /* background:#ddeedc;*/
-    -webkit-box-shadow: 1px 1px 1px rgba(70, 70, 70, 1);
-    -moz-box-shadow:    1px 1px 1px rgba(70, 70, 70, 1);
-    box-shadow:         1px 1px 1px rgba(70, 70, 70, 1);
-    color:#707070;
-}
-#skills dl dd.level1:hover, #skills dl dd.level2:hover, #skills dl dd.level3:hover {
-    background-color: #c6d6c5; 
-    -webkit-box-shadow: inset 0px 2px 1px 1px rgba(0, 0, 0, 0.15); 
-    box-shadow: inset 0px 2px 1px 1px rgba(0, 0, 0, 0.15); 
-}
-/*#skills dl dd.fav{
-    -webkit-box-shadow: 0px 0px 5px rgba(70, 70, 70, 1);
-    -moz-box-shadow:    0px 0px 5px rgba(70, 70, 70, 1);
-    box-shadow:         0px 0px 5px rgba(70, 70, 70, 1);
-    border: 0px dotted black;
-}
-#skills dl dd.fav:hover {
-    -webkit-box-shadow: 0px 0px 7px rgba(158, 175, 105, 1),inset 0px 2px 1px 1px rgba(0, 0, 0, 0.15); 
-    box-shadow: 0px 0px 7px rgba(158, 175, 105, 1),inset 0px 2px 1px 1px rgba(0, 0, 0, 0.15); 
-}*/
-
-#experience article {margin: 15px 0 37px 95px; padding-left: 5px; position: relative; border: 1px solid #FCFCFC}
-#experience article:last-child {margin-bottom: 0}
-#experience article:hover {border: 1px dotted #ddd; background: #fefefe}
-#experience article h1 {border: none; font-size: 1.2em; font-style: italic; font-weight: bold; padding: 0; text-transform: none;}
-#experience article h1 a {color: #333; text-decoration: none}
-#experience article h1 a:hover {
-    background-color: #333; 
-    color: #eee;
-    padding: 0px 5px 0px 5px;
-    -webkit-border-radius:  7px 0px 9px 0px/7px 0px 6px 0px;
-    border-radius:  7px 0px 9px 0px/7px 0px 6px 0px;
-    } 
-#experience article h1 span {color: #777; font-size: 0.8em; font-weight: normal;}
-#experience article h2 {
-    background: #eee; display: inline; 
-    font-size: 0.9em; font-weight: normal; 
-    padding: 3px;
-    -webkit-border-radius:  7px 0px 9px 0px/7px 0px 6px 0px;
-    border-radius:  7px 0px 9px 0px/7px 0px 6px 0px;
-}
-#experience article .start, #experience article .end {background: #fff; border-top: 1px dashed #ddd; font-size: 0.75em; left: -80px; padding: 4px 0; position: absolute; text-align: center; top: 19px; width: 60px;}
-#experience article .end {top: 0; border: none}
-#experience article p {font-size: 0.9em; line-height: 22px; margin: 10px 0 0; padding-left: 0;}
-
-#education h2 {padding-left: 20px;}
-#education p {padding-top: 5px;}
-
-#hobbies ul {font-size: 0.9em; margin-left: 20px;}
-#hobbies ul li {margin: 10px 0; list-style: circle inside none; cursor: default}
-#hobbies ul li:hover {list-style: disc inside none;}
-#hobbies ul li a {color: #555}
-#hobbies ul li a:hover {background-color: #555; color: #eee; text-decoration: none}
-
-#languages ul {
-    font-size: 0.9em; margin-left: 20px;
-}
-#languages ul li {margin: 10px 0; list-style: circle inside none; cursor: default}
-#languages ul li:hover {list-style: disc inside none;}
-#languages ul li a {color: #555}
-#languages ul li a:hover {background-color: #555; color: #eee; text-decoration: none}
-#languages ul li span {
-    font-size: 0.8em;
-    background: #EDF0EB;
-    -webkit-border-radius:  7px 0px 9px 0px/7px 0px 6px 0px;
-    border-radius:  7px 0px 9px 0px/7px 0px 6px 0px;
-    padding: 3px; 
-    margin: 0px -2px 0px 13px; 
+#education p {
+    padding-top: 5px;
 }
 
 #education ul {
-    font-size: 0.9em; margin-left: 20px;
+    font-size: 0.9em;
+    margin-left: 20px;
 }
-#education ul li {margin: 10px 0; list-style: circle inside none; cursor: default}
-#education ul li:hover {list-style: disc inside none;}
-#education ul li a {color: #555}
-#education ul li a:hover {background-color: #555; color: #eee; text-decoration: none}
+
+#education ul li {
+    margin: 10px 0;
+    list-style: circle inside none;
+    cursor: default
+}
+
+#education ul li:hover {
+    list-style: disc inside none;
+}
+
+#education ul li a {
+    color: #555
+}
+
+#education ul li a:hover {
+    background-color: #555;
+    color: #eee;
+    text-decoration: none
+}
+
 #education ul li span {
     font-size: 0.8em;
     background: #EDF0EB;
-    -webkit-border-radius:  7px 0px 9px 0px/7px 0px 6px 0px;
-    border-radius:  7px 0px 9px 0px/7px 0px 6px 0px;
-    padding: 3px; 
-    margin: 0px -2px 0px 13px; 
+    -webkit-border-radius: 7px 0px 9px 0px/7px 0px 6px 0px;
+    border-radius: 7px 0px 9px 0px/7px 0px 6px 0px;
+    padding: 3px;
+    margin: 0px -2px 0px 13px;
 }
 
-.techs{
-        font-size: 0.9em;
-        padding: 0px 5px; 
-        background: #EDF0EB;
-        border-radius:  7px 0px 9px 0px/7px 0px 6px 0px;
-        margin: 0px 0px 0px 10px; 
+/* ==========================================================================
+   languages
+   ========================================================================== */
+
+#languages ul {
+    font-size: 0.9em;
+    margin-left: 20px;
 }
 
-.pr_name:before{content:"«";}
-.pr_name:after{content:"»";}
-
-/* MEDIA QUERIES */
-@media screen and (max-width:768px) {
-  .contact li {font-size: 0.7em;}
+#languages ul li {
+    margin: 10px 0;
+    list-style: circle inside none;
+    cursor: default
 }
 
-@media screen and (max-width:680px) {
-  #skills dl dt {display: block; float: none; margin: 0; text-align: left;}
+#languages ul li:hover {
+    list-style: disc inside none;
 }
 
-@media screen and (max-width:500px) {
-  .contact li {
-    border-right: medium none; 
-    display: block; 
-    float: none; 
-    font-size: 1em; 
-    overflow: hidden; 
-    padding: 6px 10px; 
-    text-align: left; 
-    width: auto !important;
-  }
-  .vcard img.ava {
-    float: none; 
-  }
-
+#languages ul li a {
+    color: #555
 }
 
-@media screen and (max-width:480px) {
-  #experience article {margin: 40px 0 37px;}
-  #experience article .start, #experience article .end {left: 0; top: -25px; border: none; border-right: 1px dashed #ddd;}
-  #experience article .end {left: 61px; top: -25px; border: none}
+#languages ul li a:hover {
+    background-color: #555;
+    color: #eee;
+    text-decoration: none
 }
 
-html{
-    /*background: url(http://dabblet.com/img/noise.png);
-    background-color: #F5F2F0;
-    font-family: Georgia, serif;
-    font-size: 18px;
-    line-height: 1.6em;
-    text-shadow: 0 2px 0 white;
-    color: #222;*/
-}   
+#languages ul li span {
+    font-size: 0.8em;
+    background: #EDF0EB;
+    -webkit-border-radius: 7px 0px 9px 0px/7px 0px 6px 0px;
+    border-radius: 7px 0px 9px 0px/7px 0px 6px 0px;
+    padding: 3px;
+    margin: 0px -2px 0px 13px;
+    line-height: 1.6;
+}
 
-.linkedin .slogo,
-.github .slogo,
-.codepen .slogo{
-    height:48px;
-    display: inline-block;
-}
-.social a { display: inline-block;}
-.linkedin .title,
-.github .title,
-.codepen .title{
-    width: 100px;
-    display: inline-block;
-    -webkit-transform: translate(0px,0px) rotateZ(0deg);
-    vertical-align: text-bottom;
-    border-radius: 0px;
-    /*background-color: rgba(15,200,250,.5);*/
-    padding: 20px 20px 15px 20px;
-    text-decoration: none;
-    border: none;
-    border-bottom: 1px solid #aaa;
-    color: #444;
-    height:17px;
-}
-.linkedin .title:hover,
-.github .title:hover,
-.codepen .title:hover {
-    background-color: #eee; 
-    color: #444;
-} 
-    
-.linkedin .title{
-     border: none;
-}
-.linkedin a img{
-    -webkit-transform:rotateZ(0deg);
+/* ==========================================================================
+   hobbies
+   ========================================================================== */
 
+#hobbies ul {
+    font-size: 0.9em;
+    margin-left: 20px;
 }
-.github a img{
-    -webkit-transform:rotateZ(0deg);
 
+#hobbies ul li {
+    margin: 10px 0;
+    list-style: circle inside none;
+    cursor: default
 }
-.codepen a img{
-    -webkit-transform:rotateZ(0deg);
 
+#hobbies ul li:hover {
+    list-style: disc inside none;
 }
-.linkedin a img:hover{
-    -webkit-transform:rotateZ(0deg);
 
+#hobbies ul li a {
+    color: #555
 }
-.github a img:hover{
-    -webkit-transform:rotateZ(0deg);
 
+#hobbies ul li a:hover {
+    background-color: #555;
+    color: #eee;
+    text-decoration: none
 }
-.codepen a img:hover{
-    -webkit-transform:rotateZ(0deg);
 
+/* ==========================================================================
+   MEDIA QUERIES
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .contact li {
+        font-size: 0.7em;
+    }
 }
-.social li a {
-    boreder:1px solid #f00;
+
+@media (max-width: 680px) {
+    #skills dl dt {
+        display: block;
+        float: none;
+        margin: 0;
+        text-align: left;
+    }
+
+    .contact .skype:before, .contact .email:before, .contact .tel:before, .contact .adr:before, .contact .old:before {
+        content: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .contact li {
+        border-right: medium none;
+        display: block;
+        float: none;
+        font-size: 1em;
+        overflow: hidden;
+        padding: 6px 10px;
+        text-align: left;
+        width: auto !important;
+    }
+
+    .contact .skype:before, .contact .email:before, .contact .tel:before, .contact .adr:before, .contact .old:before {
+        content: "";
+        margin-right: 10px;
+    }
+
+    .vcard img.ava {
+        float: none;
+    }
+
+    .social li {
+        float: none;
+        padding: 4px;
+        margin: 0;
+    }
+
+    .social li .title {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    #experience article {
+        margin: 40px 0 37px;
+    }
+
+    #experience article .start, #experience article .end {
+        left: 0;
+        top: -25px;
+        border: none;
+        border-right: 1px dashed #ddd;
+    }
+
+    #experience article .end {
+        left: 61px;
+        top: -25px;
+        border: none
+    }
 }
