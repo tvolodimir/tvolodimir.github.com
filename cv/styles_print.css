@@ -40,6 +40,10 @@ article {
    contact
    ========================================================================== */
 
+a.cv-pdf {
+    display: none;
+}
+
 header img.ava {
     width: 100px;
     float: right !important;;

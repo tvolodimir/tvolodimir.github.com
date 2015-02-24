@@ -109,6 +109,25 @@ section h1 a, section h1 a:visited {
    contact
    ========================================================================== */
 
+a.cv-pdf {
+    display: inline-block;
+    -webkit-transform: translate(0px, 0px) rotateZ(0deg);
+    vertical-align: text-bottom;
+    margin: 0 5px;
+    padding: 4px;
+    color: #444;
+    float: right;
+}
+
+a.cv-pdf:hover{
+    background-color: #eee;
+    text-decoration: none
+}
+
+a.cv-pdf img {
+    padding-right: 5px;
+}
+
 .contact {
     list-style: none;
     margin-bottom: 15px;
@@ -590,6 +609,10 @@ section h1 a, section h1 a:visited {
 
     .vcard img.ava {
         float: none;
+    }
+
+    a.cv-pdf {
+        /*float: none;*/
     }
 
     .social li {
