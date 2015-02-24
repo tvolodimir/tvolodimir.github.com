@@ -612,7 +612,11 @@ a.cv-pdf img {
     }
 
     a.cv-pdf {
-        /*float: none;*/
+        float: right;
+        position: absolute;
+        margin-top: 10px;
+        right: 0;
+        top:0;
     }
 
     .social li {
