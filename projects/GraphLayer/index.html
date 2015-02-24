@@ -1,36 +1,41 @@
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  
-  <title>Silverlight GraphLayer - tvolodimir's project</title>
-  
-  <meta name="description" content="Silverlight GraphLayer">
-  <meta name="author" content="Terebus Volodymyr - tvolodimir">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" type='text/css' href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700italic,700">
-  <link rel="stylesheet" media="screen" href="../../styles.css">
-  <link rel="stylesheet" media="print" href="../../styles_print.css">
-  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Silverlight GraphLayer - tvolodimir's project</title>
+
+    <meta name="description" content="Silverlight GraphLayer">
+    <meta name="author" content="Terebus Volodymyr - tvolodimir">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../../css/normalize.css">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/main.css">
+    <script src="../../js/vendor/modernizr-2.8.3.min.js"></script>
+
+    <link rel="stylesheet" type='text/css'
+          href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700italic,700">
+    <link rel="stylesheet" media="screen" href="../../css/styles.css">
+
     <script type="text/javascript">
         function onSilverlightError(sender, args) {
             var appSource = "";
             if (sender != null && sender != 0) {
-              appSource = sender.getHost().Source;
+                appSource = sender.getHost().Source;
             }
-            
+
             var errorType = args.ErrorType;
             var iErrorCode = args.ErrorCode;
 
             if (errorType == "ImageError" || errorType == "MediaError") {
-              return;
+                return;
             }
 
-            var errMsg = "Unhandled Error in Silverlight Application " +  appSource + "\n" ;
+            var errMsg = "Unhandled Error in Silverlight Application " + appSource + "\n";
 
-            errMsg += "Code: "+ iErrorCode + "    \n";
+            errMsg += "Code: " + iErrorCode + "    \n";
             errMsg += "Category: " + errorType + "       \n";
             errMsg += "Message: " + args.ErrorMessage + "     \n";
 
@@ -39,10 +44,10 @@
                 errMsg += "Line: " + args.lineNumber + "     \n";
                 errMsg += "Position: " + args.charPosition + "     \n";
             }
-            else if (errorType == "RuntimeError") {           
+            else if (errorType == "RuntimeError") {
                 if (args.lineNumber != 0) {
                     errMsg += "Line: " + args.lineNumber + "     \n";
-                    errMsg += "Position: " +  args.charPosition + "     \n";
+                    errMsg += "Position: " + args.charPosition + "     \n";
                 }
                 errMsg += "MethodName: " + args.methodName + "     \n";
             }
@@ -50,52 +55,61 @@
             throw new Error(errMsg);
         }
     </script>
-  <style>
-  body{
-    padding-bottom:0;
-    padding-top: 0;
-  }
-  .ava{
-    margin: 20px 20px 4px 4px;
-    -webkit-box-shadow: 1px 1px 6px rgba(70, 70, 70, 1);
-	-moz-box-shadow:    1px 1px 6px rgba(70, 70, 70, 1);
-	box-shadow:         1px 1px 6px rgba(70, 70, 70, 1);
-  }
-  canvas{
-	outline: none;
-	position: absolute;
-	-webkit-user-select: none;
-	position: absolute;
-  }
-  .demo{
-	padding: 10px 0px 10px 0px;
-  }
-  a:link, a:visited, a:hover, a:active {color: #000;}
-  </style>
-  <style type="text/css">
-    #silverlightControlHost {
-	    height: 100%;
-	    text-align:center;
-    }
+    <style>
+        body {
+            padding-bottom: 0;
+            padding-top: 0;
+        }
+
+        .ava {
+            margin: 20px 20px 4px 4px;
+            -webkit-box-shadow: 1px 1px 6px rgba(70, 70, 70, 1);
+            -moz-box-shadow: 1px 1px 6px rgba(70, 70, 70, 1);
+            box-shadow: 1px 1px 6px rgba(70, 70, 70, 1);
+        }
+
+        canvas {
+            outline: none;
+            position: absolute;
+            -webkit-user-select: none;
+        }
+
+        .demo {
+            padding: 10px 0;
+        }
+
+        a:link, a:visited, a:hover, a:active {
+            color: #000;
+        }
+
+        .role a {
+            color: #ffffff;
+        }
+    </style>
+    <style type="text/css">
+        #silverlightControlHost {
+            height: 100%;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
 	<!-- vcard !-->
     <header class="vcard">
-        <img class="ava" src="../img/GraphLayer_pic_150.png"/>
+        <img class="ava" src="GraphLayer_pic_150.png"/>
         <h1 class="fn">Silverlight GraphLayer</h1>
-        <h2 class="role"><a href="../../index.html">Projects</a> > Silverlight GraphLayer</h2>
+        <h2 class="role"><a href="../index.html">Projects</a> > Silverlight GraphLayer</h2>
     </header>
     
     <!-- summary !-->
     <section id="summary">
         <h1>Summary</h1>
-        <pSilverlight GraphLayer</p>
-        <p><a href="GrapLayer.zip" title="Silverlight GraphLayer sources">sources</a></p>
+        <p>Silverlight GraphLayer</p>
+        <p><a href="GraphLayer.zip" title="Silverlight GraphLayer sources">sources</a></p>
     </section>
      
 	<section class="demo" style="-webkit-user-select: none;">
-    <form id="form1" runat="server" style="height:500px;width:700px;border:1px solid #eee">
+    <form id="form1" style="height:500px;width:700px;border:1px solid #eee">
     <div id="silverlightControlHost">
         <object data="data:application/x-silverlight-2," type="application/x-silverlight-2" width="100%" height="100%">
 		  <param name="source" value="GraphLayer.xap"/>
@@ -106,7 +120,7 @@
 		  <a href="http://go.microsoft.com/fwlink/?LinkID=149156&v=5.0.61118.0" style="text-decoration:none">
  			  <img src="http://go.microsoft.com/fwlink/?LinkId=161376" alt="Get Microsoft Silverlight" style="border-style:none"/>
 		  </a>
-	    </object><iframe id="_sl_historyFrame" style="visibility:hidden;height:0px;width:0px;border:0px"></iframe></div>
+	    </object><iframe id="_sl_historyFrame" style="visibility:hidden;height:0;width:0;border:0"></iframe></div>
     </form>
     </section>
 

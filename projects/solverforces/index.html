@@ -1,80 +1,102 @@
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  
-  <title>Solver Forces - tvolodimir's project</title>
-  
-  <meta name="description" content="Solver Forces in pure JavaScript in flat dimension">
-  <meta name="author" content="Terebus Volodymyr - tvolodimir">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" type='text/css' href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700italic,700">
-  <link rel="stylesheet" media="screen" href="../styles.css">
-  <link rel="stylesheet" media="print" href="../styles_print.css">
-  
-  <script type="text/javascript" src="solverforces_1.0.js"></script>
-  <script type="text/javascript">
-    function document_load() {
-		var app = new App(document.getElementById('canvas'));
-	}
-  </script>
-  <style>
-  body{
-    padding-bottom:0;
-    padding-top: 0;
-  }
-  .ava{
-	margin: 20px 20px 4px 4px;
-	-webkit-box-shadow: 1px 1px 6px rgba(70, 70, 70, 1);
-	-moz-box-shadow:    1px 1px 6px rgba(70, 70, 70, 1);
-	box-shadow:         1px 1px 6px rgba(70, 70, 70, 1);
-  }
-  canvas{
-	outline: none;
-	position: absolute;
-	-webkit-user-select: none;
-	position: absolute;
-  }
-  .demo{
-	padding: 10px 0px 10px 0px;
-  }
-  a:link, a:visited, a:hover, a:active {color: #000;}
-  </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>Solver Forces - tvolodimir's project</title>
+
+    <meta name="description" content="Solver Forces in pure JavaScript in flat dimension">
+    <meta name="author" content="Terebus Volodymyr - tvolodimir">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../../css/normalize.css">
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/main.css">
+    <script src="../../js/vendor/modernizr-2.8.3.min.js"></script>
+
+    <link rel="stylesheet" type='text/css'
+          href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700italic,700">
+    <link rel="stylesheet" media="screen" href="../../css/styles.css">
+
+    <script type="text/javascript" src="solverforces_1.0.js"></script>
+    <script type="text/javascript">
+        function document_load() {
+            var app = new App(document.getElementById('canvas'));
+        }
+    </script>
+    <style>
+        body {
+            padding-bottom: 0;
+            padding-top: 0;
+        }
+
+        .ava {
+            margin: 20px 20px 4px 4px;
+            -webkit-box-shadow: 1px 1px 6px rgba(70, 70, 70, 1);
+            -moz-box-shadow: 1px 1px 6px rgba(70, 70, 70, 1);
+            box-shadow: 1px 1px 6px rgba(70, 70, 70, 1);
+        }
+
+        canvas {
+            outline: none;
+            position: absolute;
+            -webkit-user-select: none;
+        }
+
+        .demo {
+            padding: 10px 0;
+        }
+
+        a:link, a:visited, a:hover, a:active {
+            color: #000;
+        }
+
+        .role a {
+            color: #ffffff;
+        }
+    </style>
 </head>
 
-<body onload="document_load()">   
-    <!-- vcard !-->
-    <header class="vcard">
-        <img class="ava" src="img/SolverForces_pic_150.png"/>
-        <h1 class="fn">Solver Forces</h1>
-        <h2 class="role"><a href="../index.html">Projects</a> > Project in pure JavaScript witch solves forces in flat dimension</h2>
-    </header>
-    
-    <!-- summary !-->
-    <section id="summary">
-        <h1>Summary</h1>
-        <p>Clientside application using JavaScript and canvas element of HTML5.</p>
-        <p>Accurate and fast solution of flat physical model completely solid circles redistribution of forces.</p>  
-        <img src="img/daum_equation_1347039746086.png" />
-    </section>
-     
-	<section class="demo" style="-webkit-user-select: none;">
-		<canvas id="canvas" width="700" height="500" tabindex="0"></canvas>
-		<div style="width: 700px;height: 500px;"></div>
-	</section>
+<body onload="document_load()">
+<!-- vcard !-->
+<header class="vcard">
+    <img class="ava" src="SolverForces_pic_150.png"/>
 
-    <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-34638673-1']);
-        _gaq.push(['_trackPageview']);
-        
-        (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    <h1 class="fn">Solver Forces</h1>
+
+    <h2 class="role"><a href="../index.html">Projects</a> > Project in pure JavaScript witch solves forces in flat
+        dimension</h2>
+</header>
+
+<!-- summary !-->
+<section id="summary">
+    <h1>Summary</h1>
+
+    <p>Clientside application using JavaScript and canvas element of HTML5.</p>
+
+    <p>Accurate and fast solution of flat physical model completely solid circles redistribution of forces.</p>
+    <img src="daum_equation_1347039746086.png"/>
+</section>
+
+<section class="demo" style="-webkit-user-select: none;">
+    <canvas id="canvas" width="700" height="500" tabindex="0"></canvas>
+    <div style="width: 700px;height: 500px;"></div>
+</section>
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34638673-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function () {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
         ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-    </script>
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+</script>
 </body>
 </html>
