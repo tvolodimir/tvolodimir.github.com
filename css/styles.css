@@ -174,23 +174,23 @@ section h1 a, section h1 a:visited {
 }
 
 .contact .skype:before {
-    background-image: url("cv/skype_B-16.png");
+    background-image: url("/cv/skype_B-16.png");
 }
 
 .contact .email:before {
-    background-image: url("cv/internt_web_technology-14-16.png");
+    background-image: url("/cv/internt_web_technology-14-16.png");
 }
 
 .contact .tel:before {
-    background-image: url("cv/telephone.png");
+    background-image: url("/cv/telephone.png");
 }
 
 .contact .old:before {
-    background-image: url("cv/common_calendar_day-16.png");
+    background-image: url("/cv/common_calendar_day-16.png");
 }
 
 .contact .adr:before {
-    background-image: url("cv/internt_web_technology-08-16.png");
+    background-image: url("/cv/internt_web_technology-08-16.png");
 }
 
 /* ==========================================================================
