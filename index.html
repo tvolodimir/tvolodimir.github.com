@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <title>Bububu - tvolodimir's personal site</title>
+    <title>tvolodimir Personal Site</title>
 
-    <meta name="description" content="Terebus Volodymyr personal site">
+    <meta name="description" content="tvolodimir personal site">
     <meta name="author" content="Terebus Volodymyr - tvolodimir">
     <!--meta name="viewport" content="width=device-width, initial-scale=1"!-->
     <meta name="viewport"
@@ -24,6 +24,7 @@
         body {
             padding-bottom: 0;
             padding-top: 0;
+            max-width: 600px;
         }
 
         .ava {
@@ -32,6 +33,55 @@
             -moz-box-shadow: 1px 1px 6px rgba(70, 70, 70, 1);
             box-shadow: 1px 1px 6px rgba(70, 70, 70, 1);
         }
+
+        .social {
+            display: block;
+            list-style: none;
+            margin-bottom: 15px;
+            overflow: hidden;
+            /*width: 100%;*/
+        }
+
+        .social li img {
+            padding-right: 0;
+            padding-bottom: 5px;
+        }
+
+        .social li {
+            border-right: 1px solid #ccc;
+            text-align: center;
+            width: 19%;
+            margin: 0;
+        }
+
+        .social li.codepen {
+            border-right: none;
+        }
+
+        .social li.cv {
+            display: block;
+        }
+
+        @media (max-width: 500px) {
+            .social li {
+                float: none;
+                padding: 4px;
+                margin: 0;
+                border: none;
+                width: auto;
+                text-align: left;
+            }
+
+            .social li .title {
+                width: 100%;
+                padding: 0;
+            }
+
+            .social li img {
+                padding-right: 10px;
+                padding-bottom: 0;
+            }
+        }
     </style>
 </head>
 
@@ -39,22 +89,35 @@
 
 <!-- vcard !-->
 <header class="vcard">
+
     <img class="ava" src="https://gravatar.com/avatar/de1c7aa63526a5739ee15349757f1476?size=160"/>
 
-    <h1 class="fn">Bububu</h1>
+    <h1 class="fn">Terebus Volodymyr</h1>
 
-    <h2 class="role">Back-End and Front-End Developer personal site</h2>
-    <ul class="contact">
-        <li class="email">tvolodimir
-            <small>@gmail.com</small>
+    <h2 class="role">Senior Software Development Engineer</h2>
+
+    <ul class=" social">
+        <li class="linkedin">
+            <a class='title' href='https://www.linkedin.com/in/tvolodimir' target='_blank'><img src='cv/linkedin2-48.png' title='linkedin'/>LinkedIn</a>
         </li>
-        <li class="email"><a href="cv/">resume</a></li>
+        <li class="cv">
+            <a class='title' href='/cv'><img src='cv/internt_web_technology-13-48.png' title='linkedin'/>Resume</a>
+        </li>
+        <li class="blog">
+            <a class='title' href='/projects'><img src='cv/code-48.png' title='linkedin'/>Projects</a>
+        </li>
+        <li class="github">
+            <a class='title' href='https://github.com/tvolodimir' target='_blank'><img src='cv/github_48.png' title='github'/>Github</a>
+        </li>
+        <li class="codepen">
+            <a class='title' href='https://codepen.io/tvolodimir' target='_blank'><img src='cv/codepen_48.png' title='codepen'/>Codepen</a>
+        </li>
     </ul>
 </header>
 
 <!-- summary !-->
 <section id="summary">
-    <h1>Summary</h1>
+    <h1>About</h1>
 
     <p>Back-End and Front-end Developer since 2009. </p>
 
@@ -64,102 +127,6 @@
     <p>Programmer by education (graduated from the Faculty of Cybernetics). Likes to learn and apply new technologies
         and concepts, to develop interesting and unique applications and multiplayer services.
     </p>
-</section>
-
-<!-- projects !-->
-<section id="experience">
-    <h1>Projects</h1>
-    <article>
-        <h1><a name="last" href="projects/solverforces" title="Solver Forces">Solver Forces</a>
-            <span>demo</span></h1>
-
-        <h2>project in pure JavaScript witch solves forces in flat dimension</h2><br/>
-        <time datetime="2011-07-01" class="start">Jul 2011</time>
-        <time datetime="2011-07-30" class="end">Jul 2011</time>
-        <a name="last" href="projects/solverforces" title="Solver Forces">
-            <img class="ava" src="projects/solverforces/SolverForces_pic.png"/>
-            </a>
-
-            <p>Clientside application using JavaScript and canvas element of HTML5.</p>
-
-            <p>Accurate and fast solution of flat physical model completely solid circles redistribution of forces.</p>
-
-            <p>
-                <span class="techs">(HTML5, Canvas, JavaScript, mathematics, physics)</span>
-            </p>
-    </article>
-    <article>
-        <h1><a name="last" href="projects/tripletowndemo" title="Triple Town Clone">Triple Town Clone</a>
-            <span>demo</span></h1>
-
-        <h2>simple clone of game "Triple Town" in pure JavaScript</h2><br/>
-        <time datetime="2011-08-01" class="start">Aug 2011</time>
-        <time datetime="2011-08-30" class="end">Aug 2011</time>
-        <a name="last" href="projects/tripletowndemo" title="Triple Town Clone">
-            <img class="ava" src="projects/tripletowndemo/TripleTown_pic.png"/>
-            </a>
-
-            <p>Clientside application using JavaScript and canvas element of HTML5.</p>
-
-            <p>Simple clone of game "Triple Town" to represent more efficient "js" platform to "flash".</p>
-
-            <p>
-                <span class="techs">(HTML5, Canvas, JavaScript)</span>
-            </p>
-    </article>
-    <article>
-        <h1><a name="last" href="projects/flippages" title="Page Flipping">Page Flipping</a> <span>demo</span>
-        </h1>
-
-        <h2>Page Flipping demo in pure JavaScript</h2><br/>
-        <time datetime="2011-09-01" class="start">Sep 2011</time>
-        <span datetime="2011-09-30" class="end">Sep 2011</span>
-        <a name="last" href="projects/flippages" title="Page Flipping">
-            <img class="ava" src="projects/flippages/FlipPages_pic.png"/>
-            </a>
-
-            <p>Clientside application using JavaScript and canvas element of HTML5.</p>
-
-            <p>Page Flipping demo in pure JavaScript.</p>
-
-            <p>
-                <span class="techs">(HTML5, Canvas, JavaScript)</span>
-            </p>
-    </article>
-    <article>
-        <h1><a name="last" href="projects/SL.Fake3D" title="SL.Fake3D">SL.Fake3D</a>
-            <span>demo</span></h1>
-
-        <h2>Simpe demo of fake 3d object using basic 3d transformations.</h2><br/>
-        <time datetime="2011-10-01" class="start">Oct 2011</time>
-        <time datetime="2011-10-30" class="end">Oct 2011</time>
-        <a name="last" href="projects/SL.Fake3D" title="SL.Fake3D">
-            <img class="ava" src="projects/SL.Fake3D/SL.Fake3D_pic.png"/>
-            </a>
-
-            <p>Fake 3D geometry in Silverlight using basic 3d transformations.</p>
-
-            <p>
-                <span class="techs">(C#, Silverlight, 3D geometry)</span>
-            </p>
-    </article>
-    <article>
-        <h1><a name="last" href="projects/GraphLayer" title="GraphLayer">GraphLayer</a> <span>demo</span>
-        </h1>
-
-        <h2>GraphLayer in silverlight</h2><br/>
-        <time datetime="2011-11-01" class="start">Nov 2011</time>
-        <time datetime="2011-11-30" class="end">Nov 2011</time>
-        <a name="last" href="projects/GraphLayer" title="SL.Fake3D">
-            <img class="ava" src="projects/GraphLayer/GraphLayer_pic.png"/>
-            </a>
-
-            <p>GraphLayer in Silverlight.</p>
-
-            <p>
-                <span class="techs">(C#, Silverlight, mathematics, physics)</span>
-            </p>
-    </article>
 </section>
 
 <script type="text/javascript">
