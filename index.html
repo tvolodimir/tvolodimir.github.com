@@ -1,135 +1,576 @@
 <!doctype html>
-<html class="no-js" lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<html>
+	<head>
+	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
+	
+	<title>Volodymyr Terebus</title>
 
-    <title>tvolodimir Personal Site</title>
+	<style>
+	body {
+	background: #fff;
+	font: 16px 'Open Sans', Helvetica, Arial, sans-serif;
+	line-height: 1.4;
+	margin: 0 0;
+	margin-bottom: 100px;
+}
+em {
+	color: #999;
+}
+p {
+	line-height: 1.6;
+	font-size: 90%;
+}
 
-    <meta name="description" content="tvolodimir personal site">
-    <meta name="author" content="Terebus Volodymyr - tvolodimir">
-    <!--meta name="viewport" content="width=device-width, initial-scale=1"!-->
-    <meta name="viewport"
-          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi"/>
+a {
+	color: #2C85B1;
+	text-decoration: none;
+	font-weight: 400;
+}
+ul {
+	margin-bottom: 0;
+}
+section {
+	margin: 1em 0 2em;
+}
+blockquote {
+	margin: 0;
+	margin-bottom: 1em;
+}
+#resume {
+	margin: 2em 2em 2em 2.5em;
+	max-width: 760px;
+}
 
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/main.css">
-    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+/* Resume heading */
+.heading header { 
 
-    <link rel="stylesheet" type='text/css'
-          href="http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700italic,700">
-    <link rel="stylesheet" media="screen" href="css/styles.css">
-    <style>
-        body {
-            padding-bottom: 0;
-            padding-top: 0;
-            max-width: 600px;
-        }
+}
 
-        .ava {
-            margin: 20px 20px 4px 4px;
-            -webkit-box-shadow: 1px 1px 6px rgba(70, 70, 70, 1);
-            -moz-box-shadow: 1px 1px 6px rgba(70, 70, 70, 1);
-            box-shadow: 1px 1px 6px rgba(70, 70, 70, 1);
-        }
+.heading header h1 {
+	font-size: 180%;
+	margin: 0.5em 0;
+	font-weight: 600;
+}
 
-        .social {
-            display: block;
-            list-style: none;
-            margin-bottom: 15px;
-            overflow: hidden;
-            /*width: 100%;*/
-        }
+.heading header h2 {
+	font-size: 140%;
+	margin: 0;
+	font-weight: 400;
+}
 
-        .social li img {
-            padding-right: 0;
-            padding-bottom: 5px;
-        }
+.heading header .contact .detail {
+	margin: 0 1em 0 0;
+}
 
-        .social li {
-            border-right: 1px solid #ccc;
-            text-align: center;
-            width: 19%;
-            margin: 0;
-        }
+.profile {
+	display: inline-block;
+	margin: 0 1em 0 0;
+}
 
-        .social li.codepen {
-            border-right: none;
-        }
+.profile strong,
+.profile span {
+	display: inline-block;
+	margin: 0 1em 0 0;
+}
+/* section / line breaks */
+section h2 {
+	font-size: 140%;
+	margin: 0 0 1em;
+	text-transform: uppercase;
+	color: #BC1B39;
+	font-weight: 400;
+}
 
-        .social li.cv {
-            display: block;
-        }
+/* Experience items */
+.item {
+	margin: 0 0 1em;
+	padding: 0 0 1em;
+	border-bottom: 1px solid #F2EBEC;
+}
 
-        @media (max-width: 500px) {
-            .social li {
-                float: none;
-                padding: 4px;
-                margin: 0;
-                border: none;
-                width: auto;
-                text-align: left;
-            }
+.item:last-child {
+	border-bottom: none;
+}
 
-            .social li .title {
-                width: 100%;
-                padding: 0;
-            }
 
-            .social li img {
-                padding-right: 10px;
-                padding-bottom: 0;
-            }
-        }
-    </style>
-</head>
+.item header h3 {
+	margin: 0.2em 1em 0.2em 0;
+	display: inline-block;
+	font-weight: 600;
+}
 
-<body>
+.item header a {
+	display: inline-block;
+}
 
-<!-- vcard !-->
-<header class="vcard">
+.item .position {
+	font-weight: 600;
+	font-size: 100%;
+	margin: 0.2em 1em 0.2em 0;
+}
 
-    <img class="ava" src="https://gravatar.com/avatar/de1c7aa63526a5739ee15349757f1476?size=160"/>
+.item .startDate,
+.item .endDate {
+	color: #6B6B6B;
+}
 
-    <h1 class="fn">Terebus Volodymyr</h1>
+.item .highlights {
+	list-style: square;
+	font-size: 90%;
+}
 
-    <h2 class="role">Senior Software Development Engineer</h2>
+/* skills */
+#skills .item {
+	margin: 0.5em 0;
+	padding: 0 0 0.5em;
+	font-size: 90%;
+}
 
-    <ul class=" social">
-        <li class="linkedin">
-            <a class='title' href='https://www.linkedin.com/in/tvolodimir' target='_blank'><img src='cv/linkedin2-48.png' title='linkedin'/>LinkedIn</a>
-        </li>
-        <li class="cv">
-            <a class='title' href='/cv'><img src='cv/internt_web_technology-13-48.png' title='linkedin'/>Resume</a>
-        </li>
-        <li class="blog">
-            <a class='title' href='/projects'><img src='cv/code-48.png' title='linkedin'/>Projects</a>
-        </li>
-        <li class="github">
-            <a class='title' href='https://github.com/tvolodimir' target='_blank'><img src='cv/github_48.png' title='github'/>Github</a>
-        </li>
-        <li class="codepen">
-            <a class='title' href='https://codepen.io/tvolodimir' target='_blank'><img src='cv/codepen_48.png' title='codepen'/>Codepen</a>
-        </li>
-    </ul>
-</header>
+#skills .item .name {
+	font-weight: 600;
+	display: inline-block;
+	text-transform: uppercase;
+	margin: 0 1em 0 0;
+	width: 23%;
+	vertical-align: top;
+}
 
-<!-- summary !-->
-<section id="summary">
-    <h1>About</h1>
+#skills .item .keywords {
+	display: inline-block;
+	width: 70%;
+	vertical-align: top;
+}
 
-    <p>Back-End and Front-end Developer since 2009. </p>
+/* education */
+#education .item {
+	display: inline-block;
+	vertical-align: top;
+	width: 49.5%;
+	border-bottom: 0;
+}
 
-    <p>The main development platforms are .NET Framework, node.js and clients' JS for web services and mobile
-        applications.</p>
 
-    <p>Programmer by education (graduated from the Faculty of Cybernetics). Likes to learn and apply new technologies
-        and concepts, to develop interesting and unique applications and multiplayer services.
-    </p>
-</section>
 
-<script type="text/javascript">
+	</style>
+	<style media="print">
+		body { font-size: 12px; }
+	</style>
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
+	
+	</head>
+	<body>
+	
+	<div id="resume">
+
+	<section class="heading">
+		<header>
+			<h1>Volodymyr Terebus</h1>
+			<div class="contact">
+				<span class="detail">
+					<a href="mailto:tvolodimir@gmail.com">tvolodimir@gmail.com</a>
+				</span>
+				<span class="detail">
+					+380632276019
+				</span>
+				<span class="detail">
+					<a href="https://tvolodimir.github.io/">https://tvolodimir.github.io/</a>
+				</span>
+			</div>
+		</header>
+
+
+		<p><p>I very like TS, JS, C# languages, and I am skilled in Software, Web and Game Development for 10 years. I have an education in CS, mathematics, and physics. Sure, I have participated in all stages of the software development life cycle. I have led the design, development, and deployment of many projects. I have experience both with frontend and backend. Also, I worked with variously distributed teams and managers.</p></p>
+
+			<div class="profile">
+				<span class="username">
+					<a href="https://github.com/tvolodimir">github</a>
+				</span>
+			</div>
+			<div class="profile">
+				<span class="username">
+					<a href="https://www.linkedin.com/in/tvolodimir">linkedin</a>
+				</span>
+			</div>
+			<div class="profile">
+				<span class="username">
+					<a href="https://codepen.io/tvolodimir">codepen</a>
+				</span>
+			</div>
+			<div class="profile">
+				<span class="username">
+					<a href="https://tvolodimir.github.io/projects">old pet projects</a>
+				</span>
+			</div>
+			<div class="profile">
+				<span class="username">
+					<a href="https://tvolodimir.github.io/Resume-Terebus_Volodymyr.pdf">resume.pdf</a>
+				</span>
+			</div>
+
+	</section>
+
+	<section id="skills">
+		<h2>Skills</h2>
+		<div class="item">
+			<div class="name">
+				Domains
+			</div>
+			<div class="keywords">
+					Software Development,
+					Web Development,
+					Game Development
+			</div>
+		</div>
+		<div class="item">
+			<div class="name">
+				General skills
+			</div>
+			<div class="keywords">
+					OOP/OOD/S.O.L.I.D principles,
+					Software design/architecture patterns,
+					Git Flow,
+					CI/CD,
+					UML
+			</div>
+		</div>
+		<div class="item">
+			<div class="name">
+				JavaScript and libraries
+			</div>
+			<div class="keywords">
+					ES5, ES6,.., ES2019,
+					TypeScript,
+					Node.JS,
+					AngularJS,
+					React,
+					Angular,
+					PixiJS,
+					Firebase,
+					Electron,
+					RxJS,
+					MobX,
+					Redux,
+					Immer
+			</div>
+		</div>
+		<div class="item">
+			<div class="name">
+				Web technologies anf APIs
+			</div>
+			<div class="keywords">
+					HTTP,
+					OAUTH,
+					CORS,
+					HTML,
+					CSS,
+					SASS,
+					PostCSS,
+					PWA,
+					HTTP caching,
+					Responsive design,
+					Adaptive design,
+					CSSOM,
+					Canvas API,
+					DOM,
+					IndexedDB,
+					Web Animations,
+					Web Audio API,
+					Web Workers,
+					WebGL,
+					WebSocket API
+			</div>
+		</div>
+		<div class="item">
+			<div class="name">
+				Web tools
+			</div>
+			<div class="keywords">
+					Grunt,
+					Gulp.js,
+					rollup.js,
+					Webpack,
+					npm,
+					pnpm,
+					lint-staged,
+					TSLint,
+					Prettier
+			</div>
+		</div>
+		<div class="item">
+			<div class="name">
+				Tools
+			</div>
+			<div class="keywords">
+					Git,
+					SVN,
+					Jira,
+					Postman,
+					TeamCity,
+					Jenkins,
+					Fiddler2,
+					Visual Studio,
+					Visual Studio Code,
+					Webstorm
+			</div>
+		</div>
+		<div class="item">
+			<div class="name">
+				.NET
+			</div>
+			<div class="keywords">
+					C#,
+					ASP.NET (WebForm, WebAPI),
+					MSSQL,
+					WCF,
+					WinForms,
+					ADO.NET,
+					Entity Framework,
+					XNA,
+					T-SQL
+			</div>
+		</div>
+		<div class="item">
+			<div class="name">
+				Unity
+			</div>
+			<div class="keywords">
+					cross platform development,
+					publishing to stores,
+					debugging and optimizing,
+					writing native plugins and editor extensions
+			</div>
+		</div>
+		<div class="item">
+			<div class="name">
+				Personal skills
+			</div>
+			<div class="keywords">
+					Critical Thinking,
+					Problem-Solving,
+					Attention to Detail,
+					Responsibility,
+					Team leading
+			</div>
+		</div>
+		<div class="item">
+			<div class="name">
+				Responsibilities
+			</div>
+			<div class="keywords">
+					requirements gathering,
+					software designing,
+					tech stack researching,
+					code-reviewing,
+					mentoring,
+					interviewing candidates
+			</div>
+		</div>
+	</section>
+
+	<section class="experience">
+		<h2>Experience</h2>
+		<section class="item">
+			<header>
+					<h3 class="name">Digicode (iSoftBet)</h3>
+			</header>
+			<span class="position">
+				Senior Software Engineer
+			</span>
+
+			<span class="startDate">
+				Jun 2017
+			</span>
+			<span class="endDate">
+				- undefined NaN
+			</span>
+
+			<div class="summary">
+				<p><p>Platform for artists to create game through visual editor</p></p>
+			</div>
+			<ul class="highlights">
+				<li>have a leading role with responsibilities of application architect/tech lead</li>
+				<li>build a pluggable, extensible, multiplatform standalone application with its own framework implementation</li>
+				<li>work with Electron, ts, react, angular, monorepo</li>
+				<li>reviewing PR from the dev team</li>
+				<li>am in charge of requirement gathering, research and design phases</li>
+			</ul>
+		</section>
+		<section class="item">
+			<header>
+					<h3 class="name">Digicode</h3>
+			</header>
+			<span class="position">
+				Front-end practice lead
+			</span>
+
+			<span class="startDate">
+				Feb 2018
+			</span>
+			<span class="endDate">
+				- Sep 2019
+			</span>
+
+			<ul class="highlights">
+				<li>was in charge of all the web outsourcing teams</li>
+				<li>was interviewing the candidates for the company</li>
+				<li>was reviewing PR from the web teams</li>
+				<li>did mentoring</li>
+				<li>was creating and implementing best practices/processes into web development life cycle</li>
+				<li>was writing tech articles</li>
+			</ul>
+		</section>
+		<section class="item">
+			<header>
+					<h3 class="name">Digicode</h3>
+			</header>
+			<span class="position">
+				Unity Developer
+			</span>
+
+			<span class="startDate">
+				Jun 2015
+			</span>
+			<span class="endDate">
+				- Jun 2017
+			</span>
+
+			<ul class="highlights">
+				<li>have developed bunch of games for mobile platforms</li>
+				<li>was in charge of initializing projects from scratch</li>
+				<li>took participation in deployment into production, maintenance</li>
+				<li>was working in teams with 2-5 dev</li>
+			</ul>
+		</section>
+		<section class="item">
+			<header>
+					<h3 class="name">Digicode</h3>
+			</header>
+			<span class="position">
+				Front-end Developer
+			</span>
+
+			<span class="startDate">
+				Apr 2015
+			</span>
+			<span class="endDate">
+				- Jun 2017
+			</span>
+
+			<ul class="highlights">
+				<li>have developed and was supporting html games for mobile, desktop and facebook</li>
+				<li>was working in teams of 2-4 dev</li>
+				<li>worked with various web frameworks, Vanilla JS, web APIs and tools, Node.js</li>
+				<li>have developed a serverless supporting system for websites and back office for operators over Firebase</li>
+			</ul>
+		</section>
+		<section class="item">
+			<header>
+					<h3 class="name">Digicode</h3>
+			</header>
+			<span class="position">
+				.NET Developer
+			</span>
+
+			<span class="startDate">
+				Sep 2012
+			</span>
+			<span class="endDate">
+				- Apr 2015
+			</span>
+
+			<ul class="highlights">
+				<li>was designing, developing and maintaining projects built on .NET ecosystem (ASP.NET, ASP WebForm, Windows services, MSSQL)</li>
+				<li>was involved into back-end and front-end development</li>
+			</ul>
+		</section>
+		<section class="item">
+			<header>
+					<h3 class="name">UMG</h3>
+			</header>
+			<span class="position">
+				.NET Developer
+			</span>
+
+			<span class="startDate">
+				Sep 2010
+			</span>
+			<span class="endDate">
+				- Sep 2012
+			</span>
+
+			<ul class="highlights">
+				<li>was developing and supporting bunch of applications for marketing research</li>
+				<li>worked with C#, MSSQL, WinForms, .Net Remoting, SIP, IL, MS Office, HTML, CSS, JS, ASP.NET</li>
+				<li>worked in team of 3 dev</li>
+			</ul>
+		</section>
+	</section>
+
+	
+	<section id="education">
+		<h2>Education</h2>
+		<div class="item">
+			<header>
+					<h3 class="name">Taras Shevchenko National University of Kyiv</h3>
+			</header>
+
+			<div class="dates">
+				<span class="startDate">
+					Sep 2004
+				</span>
+				<span class="endDate">
+					- Jun 2010
+				</span>
+			</div>
+
+			<div class="qualification">
+				<span class="studyType">
+					MS
+				</span>
+
+				<span class="area">
+					- Faculty of Computer Science and Cybernetics
+				</span>
+
+			</div>
+
+		</div>
+	</section>
+	
+	
+
+	<section id="languages">
+		<h2>Languages</h2>
+		<div class="item">
+			<div class="language">
+				English
+			</div>
+			<div class="fluency">
+				<em>intermediate</em>
+			</div>
+		</div>
+		<div class="item">
+			<div class="language">
+				Ukrainian
+			</div>
+			<div class="fluency">
+				<em>native</em>
+			</div>
+		</div>
+	</section>
+
+	<!-- footer !-->
+	<section>
+        <p>Resume last modification: <span>MAR 2020</span></p>
+    </section>
+	
+	</div>
+	
+		<!-- Google Analytics !-->
+	<script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -137,6 +578,6 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 
 ga('create', 'UA-35346388-1', 'auto');
 ga('send', 'pageview');
-</script>
-</body>
+	</script>
+	</body>
 </html>
